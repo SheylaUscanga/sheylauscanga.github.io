@@ -1,49 +1,589 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sheyla Uscanga</title>
+
+```
+<title>Sheyla Uscanga Vazquez</title>
+
+<style>
+
+    body {
+        margin: 0;
+        background: white;
+        color: #222;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 28px 35px 55px;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 65px;
+    }
+
+    .nav-name {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 17px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 24px;
+        font-size: 14px;
+    }
+
+    .nav-links a {
+        color: #222;
+        text-decoration: none;
+    }
+
+    .nav-links a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    /* PROFILE */
+
+    .profile {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        gap: 35px;
+        margin-bottom: 55px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 180px;
+        object-fit: cover;
+        background: #f1f1f1;
+    }
+
+    .profile-text h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 34px;
+        font-weight: normal;
+        margin: 0 0 5px;
+    }
+
+    .affiliation {
+        color: #555;
+        margin-bottom: 24px;
+    }
+
+    .profile-text p {
+        margin: 0 0 18px;
+    }
+
+    /* LINKS */
+
+    .personal-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .personal-links a {
+        color: #222;
+        text-decoration: none;
+    }
+
+    .personal-links a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    /* SECTIONS */
+
+    section {
+        margin-top: 48px;
+    }
+
+    h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px;
+        font-weight: normal;
+        margin: 0 0 22px;
+    }
+
+    p {
+        max-width: 780px;
+    }
+
+    /* RESEARCH INTERESTS */
+
+    .research-list {
+        margin: 0;
+        padding-left: 22px;
+        max-width: 800px;
+    }
+
+    .research-list li {
+        margin-bottom: 7px;
+    }
+
+    /* RECENT WORK */
+
+    .work {
+        margin-bottom: 32px;
+        max-width: 800px;
+    }
+
+    .work-title {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .work-meta {
+        color: #666;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .work a {
+        color: #222;
+        text-decoration: none;
+    }
+
+    .work a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-item {
+        margin-bottom: 22px;
+        max-width: 800px;
+    }
+
+    .experience-title {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 18px;
+    }
+
+    .experience-meta {
+        color: #666;
+        font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 70px;
+        padding-top: 22px;
+        border-top: 1px solid #ddd;
+        font-size: 13px;
+        color: #666;
+    }
+
+    footer a {
+        color: #666;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+        .page {
+            padding: 22px 22px 45px;
+        }
+
+        nav {
+            display: block;
+            margin-bottom: 45px;
+        }
+
+        .nav-links {
+            margin-top: 12px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .profile {
+            display: block;
+        }
+
+        .profile-image {
+            margin-bottom: 25px;
+        }
+
+        .profile-text h1 {
+            font-size: 30px;
+        }
+
+    }
+
+</style>
+```
+
 </head>
 
 <body>
-    <h1>Sheyla Uscanga</h1>
 
-    <p>
-        International Relations student interested in AI, technology,
-        international law, and the social contexts in which technological
-        systems are developed and deployed.
-    </p>
+<div class="page">
 
-    <h2>About</h2>
+```
+<!-- NAVIGATION -->
 
-    <p>
-        I am an International Relations student at BUAP, based in Mexico.
-        My academic work focuses on the relationship between technology,
-        institutions, regulation, and society, with particular interest in
-        artificial intelligence and its implications across different contexts.
-    </p>
+<nav>
 
-    <h2>Research</h2>
+    <div class="nav-name">
+        Sheyla Uscanga
+    </div>
 
-    <p>
-        My research explores AI decision-making, regulation, epistemic agency,
-        and the ways technological systems interact with institutional and
-        social contexts.
-    </p>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-    <h2>Experience</h2>
+</nav>
 
-    <p>
-        My professional experience includes work in migration and consular
-        affairs, electoral processes, intercultural initiatives, and
-        international research projects.
-    </p>
 
-    <h2>Contact</h2>
+<!-- PROFILE -->
 
-    <p>
-        <a href="mailto:">Email</a>
-    </p>
+<main id="home">
+
+    <div class="profile">
+
+        <!-- TEMPORARY IMAGE PLACEHOLDER -->
+        <div class="profile-image"></div>
+
+
+        <div class="profile-text">
+
+            <h1>Sheyla Uscanga</h1>
+
+            <div class="affiliation">
+                International Relations · Artificial Intelligence · International Law
+            </div>
+
+
+            <p>
+                I am an International Relations student interested in
+                artificial intelligence, international law, and the
+                institutional and political contexts that shape how systems
+                of decision-making are developed and deployed.
+            </p>
+
+
+            <p>
+                My work brings together questions of AI governance and
+                regulation with broader interests in institutions,
+                international affairs, human mobility, and Latin America.
+                I am particularly interested in what happens when formal
+                systems encounter the social and political contexts in which
+                they operate.
+            </p>
+
+
+            <p>
+                My current research examines how the decision-making capacity
+                of artificial intelligence is configured through the
+                European Union's regulatory ecosystem. Alongside this work,
+                I explore questions of epistemic agency, critical approaches
+                to AI, and the ways systems can shape how people understand
+                and navigate the possibilities available to them.
+            </p>
+
+
+            <div class="personal-links">
+
+                <a href="mailto:">
+                    Email
+                </a>
+
+                <a href="#">
+                    CV
+                </a>
+
+                <a href="#">
+                    LinkedIn
+                </a>
+
+                <a href="#">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESEARCH INTERESTS -->
+
+    <section id="research">
+
+        <h2>Research interests</h2>
+
+        <ul class="research-list">
+
+            <li>
+                Artificial intelligence, decision-making, and epistemic agency
+            </li>
+
+            <li>
+                AI governance and regulation
+            </li>
+
+            <li>
+                International law
+            </li>
+
+            <li>
+                Institutions and political systems
+            </li>
+
+            <li>
+                Migration and human mobility
+            </li>
+
+            <li>
+                International affairs and diplomacy
+            </li>
+
+            <li>
+                Latin America
+            </li>
+
+            <li>
+                Critical approaches to artificial intelligence
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- RECENT WORK -->
+
+    <section>
+
+        <h2>Recent work</h2>
+
+
+        <div class="work">
+
+            <div class="work-title">
+                Configuring AI Decision-Making Capacity in the European Union
+            </div>
+
+            <div class="work-meta">
+                Undergraduate Thesis · BUAP
+            </div>
+
+            <div>
+                Examining how the decision-making capacity of artificial
+                intelligence is configured through the European Union's
+                regulatory ecosystem between 2016 and 2024.
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <div class="work-title">
+                Automation, Subjectivity & Critical Theory
+            </div>
+
+            <div class="work-meta">
+                Research Seminar · BUAP
+            </div>
+
+            <div>
+                Exploring artificial intelligence through critical political
+                economy, psychoanalysis, and Frankfurt School critical theory,
+                with attention to automation, subjectivity, power, and
+                contemporary social relations.
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <div class="work-title">
+                Cross-Border Cyber Defense
+            </div>
+
+            <div class="work-meta">
+                COIL Research Project · Mexico & Argentina
+            </div>
+
+            <div>
+                Comparative research on national cybersecurity strategies
+                in Mexico and Argentina, examining how technological and
+                security challenges are shaped by different institutional
+                and geopolitical contexts.
+            </div>
+
+        </div>
+
+
+        <div class="work">
+
+            <div class="work-title">
+                AI, Context & Epistemic Agency
+            </div>
+
+            <div class="work-meta">
+                Current research interest
+            </div>
+
+            <div>
+                Exploring how AI-generated recommendations interact with
+                local contexts and shape users' ability to understand their
+                circumstances, evaluate alternatives, and configure the
+                possibilities from which they make decisions.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+        <h2>Experience</h2>
+
+
+        <div class="experience-item">
+
+            <div class="experience-title">
+                Migration & Intercultural Affairs
+            </div>
+
+            <div class="experience-meta">
+                USCRI LAC-RECIBE
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-title">
+                Consular Affairs
+            </div>
+
+            <div class="experience-meta">
+                Secretaría de Relaciones Exteriores · Puebla
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-title">
+                Electoral Processes
+            </div>
+
+            <div class="experience-meta">
+                Instituto Nacional Electoral · 2025
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-title">
+                International Affairs & MUN
+            </div>
+
+            <div class="experience-meta">
+                Delegación Minerva · BUAP
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CV -->
+
+    <section id="cv">
+
+        <h2>CV</h2>
+
+        <p>
+            For a detailed overview of my academic background, research,
+            professional experience, and projects, please see my
+            <a href="#">CV</a>.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <p>
+            I am interested in research, international affairs, and
+            conversations around artificial intelligence, institutions,
+            regulation, and context.
+        </p>
+
+        <div class="personal-links">
+
+            <a href="mailto:">
+                Email
+            </a>
+
+            <a href="#">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <a href="#home">Sheyla Uscanga</a>
+    ·
+    International Relations · Mexico
+
+</footer>
+```
+
+</div>
+
 </body>
 </html>
