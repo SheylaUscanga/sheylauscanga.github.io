@@ -39,6 +39,11 @@
         font-size: 17px;
     }
 
+    .nav-name a {
+        color: #222;
+        text-decoration: none;
+    }
+
     .nav-links {
         display: flex;
         gap: 24px;
@@ -67,7 +72,6 @@
     .profile-image {
         width: 150px;
         height: 180px;
-        object-fit: cover;
         background: #f1f1f1;
     }
 
@@ -121,64 +125,6 @@
 
     p {
         max-width: 780px;
-    }
-
-    /* RESEARCH INTERESTS */
-
-    .research-list {
-        margin: 0;
-        padding-left: 22px;
-        max-width: 800px;
-    }
-
-    .research-list li {
-        margin-bottom: 7px;
-    }
-
-    /* RECENT WORK */
-
-    .work {
-        margin-bottom: 32px;
-        max-width: 800px;
-    }
-
-    .work-title {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
-
-    .work-meta {
-        color: #666;
-        font-size: 13px;
-        margin-bottom: 8px;
-    }
-
-    .work a {
-        color: #222;
-        text-decoration: none;
-    }
-
-    .work a:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
-
-    /* EXPERIENCE */
-
-    .experience-item {
-        margin-bottom: 22px;
-        max-width: 800px;
-    }
-
-    .experience-title {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 18px;
-    }
-
-    .experience-meta {
-        color: #666;
-        font-size: 13px;
     }
 
     /* FOOTER */
@@ -248,23 +194,41 @@
 <nav>
 
     <div class="nav-name">
-        Sheyla Uscanga
+        <a href="index.html">
+            Sheyla Uscanga Vazquez
+        </a>
     </div>
 
     <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="#experience">Experience</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="research.html">
+            Research
+        </a>
+
+        <a href="experience.html">
+            Professional Experience
+        </a>
+
+        <a href="cv.html">
+            CV
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
     </div>
 
 </nav>
 
 
-<!-- PROFILE -->
+<!-- HOME -->
 
-<main id="home">
+<main>
 
     <div class="profile">
 
@@ -274,7 +238,9 @@
 
         <div class="profile-text">
 
-            <h1>Sheyla Uscanga</h1>
+            <h1>
+                Sheyla Uscanga Vazquez
+            </h1>
 
             <div class="affiliation">
                 International Relations · Artificial Intelligence · International Law
@@ -315,7 +281,7 @@
                     Email
                 </a>
 
-                <a href="#">
+                <a href="cv.html">
                     CV
                 </a>
 
@@ -334,238 +300,20 @@
     </div>
 
 
-    <!-- RESEARCH INTERESTS -->
-
-    <section id="research">
-
-        <h2>Research interests</h2>
-
-        <ul class="research-list">
-
-            <li>
-                Artificial intelligence, decision-making, and epistemic agency
-            </li>
-
-            <li>
-                AI governance and regulation
-            </li>
-
-            <li>
-                International law
-            </li>
-
-            <li>
-                Institutions and political systems
-            </li>
-
-            <li>
-                Migration and human mobility
-            </li>
-
-            <li>
-                International affairs and diplomacy
-            </li>
-
-            <li>
-                Latin America
-            </li>
-
-            <li>
-                Critical approaches to artificial intelligence
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- RECENT WORK -->
-
     <section>
 
-        <h2>Recent work</h2>
-
-
-        <div class="work">
-
-            <div class="work-title">
-                Configuring AI Decision-Making Capacity in the European Union
-            </div>
-
-            <div class="work-meta">
-                Undergraduate Thesis · BUAP
-            </div>
-
-            <div>
-                Examining how the decision-making capacity of artificial
-                intelligence is configured through the European Union's
-                regulatory ecosystem between 2016 and 2024.
-            </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <div class="work-title">
-                Automation, Subjectivity & Critical Theory
-            </div>
-
-            <div class="work-meta">
-                Research Seminar · BUAP
-            </div>
-
-            <div>
-                Exploring artificial intelligence through critical political
-                economy, psychoanalysis, and Frankfurt School critical theory,
-                with attention to automation, subjectivity, power, and
-                contemporary social relations.
-            </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <div class="work-title">
-                Cross-Border Cyber Defense
-            </div>
-
-            <div class="work-meta">
-                COIL Research Project · Mexico & Argentina
-            </div>
-
-            <div>
-                Comparative research on national cybersecurity strategies
-                in Mexico and Argentina, examining how technological and
-                security challenges are shaped by different institutional
-                and geopolitical contexts.
-            </div>
-
-        </div>
-
-
-        <div class="work">
-
-            <div class="work-title">
-                AI, Context & Epistemic Agency
-            </div>
-
-            <div class="work-meta">
-                Current research interest
-            </div>
-
-            <div>
-                Exploring how AI-generated recommendations interact with
-                local contexts and shape users' ability to understand their
-                circumstances, evaluate alternatives, and configure the
-                possibilities from which they make decisions.
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EXPERIENCE -->
-
-    <section id="experience">
-
-        <h2>Experience</h2>
-
-
-        <div class="experience-item">
-
-            <div class="experience-title">
-                Migration & Intercultural Affairs
-            </div>
-
-            <div class="experience-meta">
-                USCRI LAC-RECIBE
-            </div>
-
-        </div>
-
-
-        <div class="experience-item">
-
-            <div class="experience-title">
-                Consular Affairs
-            </div>
-
-            <div class="experience-meta">
-                Secretaría de Relaciones Exteriores · Puebla
-            </div>
-
-        </div>
-
-
-        <div class="experience-item">
-
-            <div class="experience-title">
-                Electoral Processes
-            </div>
-
-            <div class="experience-meta">
-                Instituto Nacional Electoral · 2025
-            </div>
-
-        </div>
-
-
-        <div class="experience-item">
-
-            <div class="experience-title">
-                International Affairs & MUN
-            </div>
-
-            <div class="experience-meta">
-                Delegación Minerva · BUAP
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CV -->
-
-    <section id="cv">
-
-        <h2>CV</h2>
+        <h2>
+            Research interests
+        </h2>
 
         <p>
-            For a detailed overview of my academic background, research,
-            professional experience, and projects, please see my
-            <a href="#">CV</a>.
+            My research interests include artificial intelligence,
+            decision-making and epistemic agency; AI governance and
+            regulation; international law; institutions and political
+            systems; migration and human mobility; international affairs
+            and diplomacy; Latin America; and critical approaches to
+            artificial intelligence.
         </p>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-        <h2>Contact</h2>
-
-        <p>
-            I am interested in research, international affairs, and
-            conversations around artificial intelligence, institutions,
-            regulation, and context.
-        </p>
-
-        <div class="personal-links">
-
-            <a href="mailto:">
-                Email
-            </a>
-
-            <a href="#">
-                LinkedIn
-            </a>
-
-        </div>
 
     </section>
 
@@ -576,8 +324,12 @@
 
 <footer>
 
-    <a href="#home">Sheyla Uscanga</a>
+    <a href="index.html">
+        Sheyla Uscanga Vazquez
+    </a>
+
     ·
+
     International Relations · Mexico
 
 </footer>
