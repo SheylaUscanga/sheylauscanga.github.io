@@ -1,419 +1,522 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sheyla Uscanga Vazquez</title>
 
-<title>Sheyla Uscanga Vazquez</title>
+  <style>
+    :root {
+      --navy: #003049;
+      --red: #D62828;
+      --orange: #F77F00;
+      --cream: #EAE2B7;
+      --black: #000000;
+      --white: #FFFFFF;
 
-<style>
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
 
     * {
-        box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     body {
-        margin: 0;
-        background: #ffffff;
-        color: #252525;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 15px;
-        line-height: 1.7;
+      margin: 0;
+      background: var(--cream);
+      color: var(--navy);
+      font-family: var(--sans);
+      line-height: 1.65;
     }
 
-    .page {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 38px 34px 65px;
+    /* TOP COLOR BANNER */
+    .top-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 9px;
     }
 
+    .top-banner div:nth-child(1) {
+      background: var(--navy);
+    }
+
+    .top-banner div:nth-child(2) {
+      background: var(--red);
+    }
+
+    .top-banner div:nth-child(3) {
+      background: var(--orange);
+    }
+
+    /* MAIN CONTAINER */
+    .site {
+      width: min(940px, calc(100% - 40px));
+      margin: 0 auto;
+    }
 
     /* NAVIGATION */
-
     nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-        padding-bottom: 19px;
-        border-bottom: 1px solid #dddddd;
-        margin-bottom: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0 18px;
+      border-bottom: 2px solid var(--navy);
+      gap: 20px;
     }
 
-    .nav-name {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 17px;
-        white-space: nowrap;
-    }
-
-    .nav-name a {
-        color: #252525;
-        text-decoration: none;
+    .site-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--navy);
+      white-space: nowrap;
     }
 
     .nav-links {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        gap: 20px;
-        font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
     }
 
     .nav-links a {
-        color: #252525;
-        text-decoration: none;
-        transition: color 0.2s ease;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 12px;
+      padding: 7px 9px;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-        color: #555555;
-        text-decoration: underline;
-        text-underline-offset: 3px;
+      color: var(--white);
+      background: var(--orange);
+      border-color: var(--orange);
     }
 
+    .nav-links a.active {
+      color: var(--white);
+      background: var(--navy);
+      border-color: var(--navy);
+    }
 
-    /* PROFILE */
-
+    /* PROFILE HEADER */
     .profile {
-        display: grid;
-        grid-template-columns: 170px 1fr;
-        gap: 38px;
-        margin-bottom: 64px;
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 42px;
+      align-items: center;
+      padding: 55px 0 48px;
     }
 
-    .profile-image {
-        width: 150px;
-        height: 185px;
-        border: 1px solid #dddddd;
-        background: #f7f7f7;
+    .photo-wrap {
+      position: relative;
+      width: 180px;
+      height: 220px;
+    }
+
+    .photo-wrap::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 220px;
+      top: 12px;
+      left: 12px;
+      background: var(--orange);
+      z-index: 0;
+    }
+
+    .photo-wrap img {
+      position: relative;
+      width: 180px;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      z-index: 1;
+      border: 3px solid var(--navy);
+      background: var(--cream);
     }
 
     .profile-text h1 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 38px;
-        line-height: 1.15;
-        font-weight: normal;
-        margin: 0 0 8px;
-        color: #252525;
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: clamp(38px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      color: var(--navy);
     }
 
-    .affiliation {
-        color: #666666;
-        font-size: 14px;
-        margin-bottom: 28px;
+    .profile-text .role {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 7px 12px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.2px;
     }
 
-    .profile-text p {
-        max-width: 780px;
-        margin: 0 0 19px;
+    .profile-text .intro {
+      max-width: 610px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.5;
+      color: var(--navy);
     }
 
-
-    /* PERSONAL LINKS */
-
-    .personal-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 19px;
-        margin-top: 25px;
-        font-size: 14px;
+    /* QUICK LINKS */
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
     }
 
-    .personal-links a {
-        color: #0645ad;
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 3px;
-        transition: color 0.2s ease;
+    .quick-links a {
+      display: inline-block;
+      padding: 9px 15px;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      background: transparent;
+      transition: 0.2s ease;
     }
 
-    .personal-links a:hover {
-        color: #002b6f;
+    .quick-links a:hover {
+      color: var(--white);
+      background: var(--orange);
+      border-color: var(--orange);
     }
 
+    /* CONTENT PANELS */
+    .section {
+      margin: 0 0 30px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 28px;
+      color: var(--navy);
+    }
+
+    .section-header .line {
+      flex: 1;
+      height: 2px;
+      background: var(--navy);
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.22);
+      border: 2px solid var(--navy);
+      padding: 25px 28px;
+      box-shadow: 8px 8px 0 var(--navy);
+    }
+
+    .panel p {
+      margin: 0 0 14px;
+      font-size: 15px;
+    }
+
+    .panel p:last-child {
+      margin-bottom: 0;
+    }
 
     /* RESEARCH INTERESTS */
-
-    section {
-        border-top: 1px solid #dddddd;
-        padding-top: 29px;
-        margin-top: 10px;
+    .interest-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
     }
 
-    h2 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 23px;
-        line-height: 1.3;
-        font-weight: normal;
-        margin: 0 0 19px;
-        color: #252525;
+    .interest {
+      display: inline-block;
+      padding: 8px 12px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      border: 2px solid var(--navy);
     }
 
-    section p {
-        max-width: 800px;
-        margin: 0;
+    .interest:nth-child(2n) {
+      background: var(--red);
+      border-color: var(--red);
     }
 
+    .interest:nth-child(3n) {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    /* RECENT WORK */
+    .work-item {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(0, 48, 73, 0.35);
+    }
+
+    .work-item:first-child {
+      padding-top: 0;
+    }
+
+    .work-item:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .work-item .type {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .work-item h3 {
+      margin: 4px 0 5px;
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .work-item p {
+      margin: 0;
+      font-size: 14px;
+    }
 
     /* FOOTER */
-
     footer {
-        margin-top: 76px;
-        padding-top: 20px;
-        border-top: 1px solid #dddddd;
-        font-size: 13px;
-        color: #777777;
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        flex-wrap: wrap;
+      margin-top: 70px;
+      padding: 25px 0 35px;
+      border-top: 2px solid var(--navy);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     footer a {
-        color: #555555;
-        text-decoration: none;
+      color: var(--navy);
+      font-weight: bold;
+      text-decoration: none;
     }
 
     footer a:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
+      color: var(--orange);
     }
-
 
     /* MOBILE */
+    @media (max-width: 720px) {
+      .site {
+        width: min(100% - 28px, 940px);
+      }
 
-    @media (max-width: 850px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
 
-        nav {
-            display: block;
-        }
+      .nav-links {
+        justify-content: flex-start;
+      }
 
-        .nav-links {
-            justify-content: flex-start;
-            margin-top: 14px;
-        }
+      .profile {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 40px;
+      }
 
+      .photo-wrap {
+        width: 160px;
+        height: 200px;
+      }
+
+      .photo-wrap::after {
+        width: 160px;
+        height: 200px;
+      }
+
+      .photo-wrap img {
+        width: 160px;
+        height: 200px;
+      }
+
+      .profile-text h1 {
+        font-size: 42px;
+      }
+
+      .profile-text .intro {
+        font-size: 18px;
+      }
+
+      .panel {
+        box-shadow: 5px 5px 0 var(--navy);
+        padding: 21px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
     }
-
-
-    @media (max-width: 700px) {
-
-        .page {
-            padding: 27px 22px 50px;
-        }
-
-        nav {
-            margin-bottom: 52px;
-        }
-
-        .nav-links {
-            gap: 13px 17px;
-        }
-
-        .profile {
-            display: block;
-        }
-
-        .profile-image {
-            margin-bottom: 28px;
-        }
-
-        .profile-text h1 {
-            font-size: 33px;
-        }
-
-        .profile-text p {
-            max-width: none;
-        }
-
-        footer {
-            display: block;
-        }
-
-        footer span {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-    }
-
-</style>
-```
-
+  </style>
 </head>
 
 <body>
 
-<div class="page">
+  <div class="top-banner">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-```
-<!-- NAVIGATION -->
+  <div class="site">
 
-<nav>
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="site-name">Sheyla Uscanga Vazquez</div>
 
-    <div class="nav-name">
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="research.html">Research</a>
+        <a href="experience.html">Professional Experience</a>
+        <a href="engagement.html">Academic &amp; Community Engagement</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
 
-        <a href="index.html">
-            Sheyla Uscanga Vazquez
-        </a>
+    <!-- PROFILE -->
+    <header class="profile">
 
-    </div>
+      <div class="photo-wrap">
+        <img src="Foto%20cv.jpeg" alt="Sheyla Uscanga Vazquez">
+      </div>
 
+      <div class="profile-text">
+        <h1>Sheyla Uscanga Vazquez</h1>
 
-    <div class="nav-links">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="research.html">
-            Research
-        </a>
-
-        <a href="experience.html">
-            Professional Experience
-        </a>
-
-        <a href="engagement.html">
-            Academic &amp; Community Engagement
-        </a>
-
-        <a href="cv.html">
-            CV
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </div>
-
-</nav>
-
-
-<!-- HOME -->
-
-<main>
-
-    <div class="profile">
-
-
-        <!-- PHOTO -->
-
-        <div class="profile-image">
-            <img src="Foto%20cv.jpeg" alt="Sheyla Uscanga Vazquez">
+        <div class="role">
+          BSc Student · International Relations
         </div>
 
-
-        <div class="profile-text">
-
-            <h1>
-                Sheyla Uscanga Vazquez
-            </h1>
-
-
-            <div class="affiliation">
-                International Relations · Artificial Intelligence · International Law
-            </div>
-
-
-            <p>
-                I am an International Relations student interested in
-                artificial intelligence, international law, and the
-                institutional and political contexts that shape how systems
-                of decision-making are developed and deployed.
-            </p>
-
-
-            <p>
-                My work brings together questions of AI governance and
-                regulation with broader interests in institutions,
-                international affairs, human mobility, and Latin America.
-                I am particularly interested in what happens when formal
-                systems encounter the social and political contexts in which
-                they operate.
-            </p>
-
-
-            <p>
-                My current research examines how the decision-making capacity
-                of artificial intelligence is configured through the
-                European Union's regulatory ecosystem. Alongside this work,
-                I explore questions of epistemic agency, critical approaches
-                to AI, and the ways systems can shape how people understand
-                and navigate the possibilities available to them.
-            </p>
-
-
-            <div class="personal-links">
-
-                <a href="mailto:sheyla.professional@gmail.com">
-                    Email
-                </a>
-
-                <a href="cv.html">
-                    CV
-                </a>
-
-                <a
-                    href="https://github.com/SheylaUscanga"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- RESEARCH INTERESTS -->
-
-    <section>
-
-        <h2>
-            Research interests
-        </h2>
-
-        <p>
-            My research interests include artificial intelligence,
-            decision-making and epistemic agency; AI governance and
-            regulation; international law; institutions and political
-            systems; migration and human mobility; international affairs
-            and diplomacy; Latin America; and critical approaches to
-            artificial intelligence.
+        <p class="intro">
+          I work in international affairs, institutions and epistemology of artificial intelligence.
         </p>
 
+        <div class="quick-links">
+          <a href="mailto:sheyla.professional@gmail.com">Email</a>
+          <a href="cv.html">CV</a>
+          <a href="https://github.com/SheylaUscanga" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- ABOUT -->
+    <section class="section">
+      <div class="section-header">
+        <h2>About</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="panel">
+        <p>
+          I am a BSc student in International Relations at Benemérita Universidad Autónoma de Puebla (BUAP), interested in the relationship between international affairs, institutions, law and emerging technologies.
+        </p>
+
+        <p>
+          My work brings together questions about how institutions organize knowledge, how technologies shape decision-making, and how these processes operate across different social and political contexts.
+        </p>
+
+        <p>
+          I am particularly interested in artificial intelligence, AI regulation, epistemic agency, international law, institutions and power, human mobility, and Latin America.
+        </p>
+      </div>
     </section>
 
-</main>
+    <!-- RESEARCH INTERESTS -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Research Interests</h2>
+        <div class="line"></div>
+      </div>
 
+      <div class="panel">
+        <div class="interest-grid">
+          <span class="interest">Artificial Intelligence</span>
+          <span class="interest">Epistemic Agency</span>
+          <span class="interest">AI Regulation</span>
+          <span class="interest">International Law</span>
+          <span class="interest">Institutions &amp; Power</span>
+          <span class="interest">International Affairs</span>
+          <span class="interest">Human Mobility</span>
+          <span class="interest">Latin America</span>
+        </div>
+      </div>
+    </section>
 
-<!-- FOOTER -->
+    <!-- RECENT WORK -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Recent Work</h2>
+        <div class="line"></div>
+      </div>
 
-<footer>
+      <div class="panel">
 
-    <a href="index.html">
-        Sheyla Uscanga Vazquez
-    </a>
+        <div class="work-item">
+          <div class="type">Undergraduate Thesis</div>
+          <h3>Configuring AI Decision-Making Capacity in the European Union</h3>
+          <p>
+            Examining how European Union regulations and institutional structures delimit and organize the field of action available to artificial intelligence systems.
+          </p>
+        </div>
 
-    <span>
-        International Relations · Mexico
-    </span>
+        <div class="work-item">
+          <div class="type">Current Research Interest</div>
+          <h3>AI Travel Planners and Epistemic Agency</h3>
+          <p>
+            Exploring how AI-generated travel recommendations can carry assumptions across contexts and shape what users perceive as available, realistic, or possible.
+          </p>
+        </div>
 
-</footer>
-```
+        <div class="work-item">
+          <div class="type">Research Seminar</div>
+          <h3>Automation, Subjectivity &amp; Critical Theory</h3>
+          <p>
+            A critical exploration of artificial intelligence, political economy, subjectivity, power and critical theory.
+          </p>
+        </div>
 
-</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>Sheyla Uscanga Vazquez · Puebla, Mexico</span>
+
+      <span>
+        <a href="mailto:sheyla.professional@gmail.com">Email</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/SheylaUscanga" target="_blank">GitHub</a>
+      </span>
+    </footer>
+
+  </div>
 
 </body>
-
 </html>
+```
