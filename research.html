@@ -1,10 +1,9 @@
-html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Research | Sheyla Uscanga Vazquez</title>
 
   <style>
@@ -12,207 +11,252 @@ html
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #ffffff;
-      color: #222222;
+      color: #242424;
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
     .page {
       max-width: 960px;
       margin: 0 auto;
-      padding: 34px 28px 80px;
+      padding: 38px 34px 70px;
     }
 
     /* NAVIGATION */
 
     nav {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 30px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid #d8d8d8;
+      align-items: center;
+      gap: 27px;
+      flex-wrap: wrap;
+      padding-bottom: 17px;
       margin-bottom: 72px;
+      border-bottom: 1px solid #d9d9d9;
     }
 
-    nav .name {
+    nav .site-name {
+      margin-right: auto;
+      color: #242424;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.05rem;
+      font-size: 17px;
+      text-decoration: none;
       white-space: nowrap;
     }
 
-    nav .links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 17px;
-    }
-
-    nav a {
-      color: #222;
+    nav a:not(.site-name) {
+      color: #242424;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 14px;
+      white-space: nowrap;
     }
 
-    nav a:hover {
+    nav a:not(.site-name):hover {
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    /* HEADINGS */
-
-    h1,
-    h2,
-    h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: normal;
-    }
+    /* HEADER */
 
     h1 {
-      font-size: 2.45rem;
-      margin: 0 0 24px;
+      margin: 0 0 28px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 40px;
+      font-weight: normal;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
     }
 
     .intro {
-      max-width: 720px;
-      margin-bottom: 62px;
-      font-size: 1rem;
+      max-width: 790px;
+      margin-bottom: 12px;
+      font-size: 16px;
     }
 
-    /* INTERSECTION MAP */
-
-    .map-intro {
-      margin-bottom: 22px;
+    .instruction {
+      margin: 0 0 52px;
+      color: #666666;
+      font-size: 14px;
+      font-style: italic;
     }
 
-    .map-intro strong {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: normal;
-      font-size: 1.15rem;
-    }
+    /* RESEARCH MAP */
 
-    .map {
+    .research-map {
       position: relative;
-      width: 100%;
-      max-width: 780px;
+      width: 650px;
       height: 430px;
-      margin: 30px auto 45px;
+      margin: 0 auto 72px;
     }
 
     .circle {
       position: absolute;
-      width: 235px;
-      height: 235px;
-      border: 1px solid #9d9d9d;
+      width: 255px;
+      height: 255px;
+      border: 1px solid #8e8e8e;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.45);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-      padding: 55px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.05rem;
-
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
       transition:
         background 0.25s ease,
-        border-color 0.25s ease;
+        border-color 0.25s ease,
+        transform 0.25s ease;
     }
 
     .circle:hover {
-      border-color: #555;
+      background: rgba(245,245,245,0.55);
+      border-color: #4c4c4c;
     }
 
-    .ai {
-      left: 40px;
-      top: 35px;
+    .circle.active {
+      background: rgba(246,246,246,0.7);
+      border-color: #242424;
     }
 
-    .agency {
-      left: 210px;
-      top: 35px;
+    .circle-ai {
+      top: 0;
+      left: 190px;
     }
 
-    .law {
-      left: 125px;
-      top: 175px;
+    .circle-epistemic {
+      top: 105px;
+      left: 35px;
     }
 
-    .institutions {
-      left: 295px;
-      top: 175px;
+    .circle-regulation {
+      top: 105px;
+      right: 35px;
     }
 
-    .international {
-      left: 465px;
-      top: 35px;
+    .circle-institutions {
+      top: 205px;
+      left: 130px;
     }
 
-    /*
-      Invisible clickable intersection zones.
-      These sit over the places where the circles overlap.
-    */
+    .circle-international {
+      top: 205px;
+      right: 130px;
+    }
+
+    .circle-label {
+      position: absolute;
+      width: 180px;
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      line-height: 1.35;
+      pointer-events: none;
+    }
+
+    .circle-ai .circle-label {
+      top: 39px;
+      left: 37px;
+    }
+
+    .circle-epistemic .circle-label {
+      top: 91px;
+      left: 22px;
+    }
+
+    .circle-regulation .circle-label {
+      top: 91px;
+      right: 22px;
+    }
+
+    .circle-institutions .circle-label {
+      bottom: 35px;
+      left: 37px;
+    }
+
+    .circle-international .circle-label {
+      bottom: 35px;
+      right: 37px;
+    }
+
+    /* CLICKABLE INTERSECTIONS */
 
     .intersection {
       position: absolute;
-      z-index: 10;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      width: 105px;
-      height: 105px;
+      z-index: 5;
+      width: 92px;
+      height: 92px;
       border-radius: 50%;
+      cursor: pointer;
+      background: transparent;
     }
 
     .intersection:hover {
-      background: rgba(0, 0, 0, 0.025);
+      background: rgba(0,0,0,0.025);
     }
 
-    .i1 {
-      left: 170px;
-      top: 95px;
+    .i-1 {
+      top: 116px;
+      left: 221px;
     }
 
-    .i2 {
-      left: 100px;
-      top: 185px;
+    .i-2 {
+      top: 116px;
+      right: 221px;
     }
 
-    .i3 {
-      left: 255px;
-      top: 185px;
+    .i-3 {
+      top: 218px;
+      left: 181px;
     }
 
-    .i4 {
-      left: 255px;
-      top: 275px;
+    .i-4 {
+      top: 218px;
+      right: 181px;
     }
 
-    .i5 {
-      left: 425px;
-      top: 95px;
+    .i-5 {
+      top: 270px;
+      left: 279px;
     }
 
-    /* WORK REVEAL */
+    .intersection::after {
+      content: "↗";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      color: #0645ad;
+      font-size: 19px;
+      transition: opacity 0.2s ease;
+    }
+
+    .intersection:hover::after {
+      opacity: 1;
+    }
+
+    /* WORK DISPLAY */
+
+    .work-display {
+      max-width: 820px;
+      margin: 0 auto 70px;
+      min-height: 20px;
+    }
 
     .work {
       display: none;
-      border-top: 1px solid #cfcfcf;
-      border-bottom: 1px solid #cfcfcf;
-      padding: 28px 0 31px;
-      margin: 0 0 70px;
-      animation: appear 0.35s ease;
+      padding: 27px 0 31px;
+      border-top: 1px solid #d9d9d9;
+      animation: reveal 0.3s ease;
     }
 
-    .work.active {
+    .work.visible {
       display: block;
     }
 
-    @keyframes appear {
+    @keyframes reveal {
       from {
         opacity: 0;
         transform: translateY(7px);
@@ -224,43 +268,41 @@ html
       }
     }
 
-    .work-kicker {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.15rem;
-      margin-bottom: 16px;
+    .work-intersection {
+      margin-bottom: 17px;
+      color: #666666;
+      font-size: 13px;
     }
 
-    .work-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: #222;
-      text-decoration: none;
+    .work h2 {
+      margin: 0 0 13px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.35rem;
+      font-size: 24px;
+      font-weight: normal;
       line-height: 1.35;
-      margin-bottom: 9px;
     }
 
-    .work-link:hover {
+    .work-meta {
+      margin: 0 0 17px;
+      font-size: 14px;
+    }
+
+    .work-meta strong {
+      font-weight: normal;
+    }
+
+    .work a,
+    .selected-work a,
+    .research-links a {
+      color: #0645ad;
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .arrow {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
-      transition: transform 0.2s ease;
-    }
-
-    .work-link:hover .arrow {
-      transform: translateX(4px);
-    }
-
-    .status {
-      display: block;
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 20px;
+    .work a:hover,
+    .selected-work a:hover,
+    .research-links a:hover {
+      color: #002b6f;
     }
 
     .work-description {
@@ -270,76 +312,80 @@ html
 
     /* SELECTED WORK */
 
-    .section-title {
-      font-size: 1.75rem;
-      margin: 0 0 27px;
+    .section {
+      padding-top: 27px;
+      border-top: 1px solid #d9d9d9;
     }
 
-    .project {
-      border-top: 1px solid #d8d8d8;
-      padding: 25px 0 28px;
+    .section h2 {
+      margin: 0 0 28px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: normal;
     }
 
-    .project:last-child {
-      border-bottom: 1px solid #d8d8d8;
+    .selected-work {
+      padding: 0 0 27px;
+      margin-bottom: 27px;
+      border-bottom: 1px solid #e1e1e1;
     }
 
-    .project h3 {
-      font-size: 1.25rem;
+    .selected-work:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .selected-work h3 {
       margin: 0 0 7px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: normal;
+      line-height: 1.4;
     }
 
-    .project-meta {
-      color: #666;
-      font-size: 0.9rem;
+    .status {
+      display: inline-block;
       margin-bottom: 12px;
+      color: #666666;
+      font-size: 13px;
     }
 
-    .project p {
-      max-width: 780px;
+    .selected-work p {
+      max-width: 790px;
       margin: 0;
     }
 
     /* RESEARCH INTERESTS */
 
-    .interests {
-      margin-top: 70px;
+    .research-links {
+      margin-top: 58px;
+      padding-top: 27px;
+      border-top: 1px solid #d9d9d9;
     }
 
-    .interests-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 22px;
-      max-width: 800px;
+    .research-links h2 {
+      margin: 0 0 15px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: normal;
     }
 
-    .interest {
-      font-size: 0.95rem;
-    }
-
-    .interest::after {
-      content: "·";
-      margin-left: 22px;
-      color: #999;
-    }
-
-    .interest:last-child::after {
-      content: "";
+    .research-links p {
       margin: 0;
     }
 
     /* FOOTER */
 
     footer {
-      margin-top: 80px;
-      padding-top: 20px;
-      border-top: 1px solid #d8d8d8;
-      font-size: 0.88rem;
-      color: #555;
+      margin-top: 72px;
+      padding-top: 17px;
+      border-top: 1px solid #d9d9d9;
+      color: #777777;
+      font-size: 13px;
     }
 
     footer a {
-      color: #222;
+      color: #777777;
       text-decoration: none;
     }
 
@@ -347,504 +393,332 @@ html
       text-decoration: underline;
     }
 
-    /* MOBILE */
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      nav {
+        gap: 18px;
+      }
+
+      nav .site-name {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .research-map {
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin-bottom: 0;
+      }
+    }
 
     @media (max-width: 700px) {
-
       .page {
-        padding: 25px 20px 60px;
+        padding: 28px 22px 55px;
       }
 
       nav {
-        display: block;
-        margin-bottom: 50px;
-      }
-
-      nav .name {
-        display: block;
-        margin-bottom: 15px;
-      }
-
-      nav .links {
-        justify-content: flex-start;
-        gap: 10px 15px;
+        margin-bottom: 55px;
+        gap: 13px 18px;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 34px;
       }
 
-      .map {
-        height: 470px;
-        transform: scale(0.82);
-        transform-origin: top left;
-        width: 122%;
-        margin-bottom: -60px;
+      .research-map {
+        width: 100%;
+        height: 410px;
+        transform: scale(0.62);
+        transform-origin: top center;
+        margin-bottom: -100px;
+        margin-left: 0;
       }
 
-      .work-link {
-        font-size: 1.15rem;
-      }
-
-      .interests-list {
-        display: block;
-      }
-
-      .interest {
-        margin-bottom: 7px;
-      }
-
-      .interest::after {
-        content: "";
-        margin: 0;
+      .work-display {
+        margin-top: 20px;
       }
     }
   </style>
-</head>
 
+</head>
 
 <body>
 
-<div class="page">
+  <div class="page">
 
-  <!-- NAVIGATION -->
+```
+<nav>
+  <a class="site-name" href="index.html">Sheyla Uscanga Vazquez</a>
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="experience.html">Professional Experience</a>
+  <a href="engagement.html">Academic &amp; Community Engagement</a>
+  <a href="cv.html">CV</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <nav>
-    <div class="name">
-      Sheyla Uscanga Vazquez
-    </div>
-
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="experience.html">Professional Experience</a>
-      <a href="engagement.html">Academic & Community Engagement</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
-
-  <!-- INTRO -->
+<main>
 
   <h1>Research</h1>
 
   <p class="intro">
-    My work sits at the intersections of artificial intelligence,
-    epistemic agency, regulation, international law, and the institutional
-    contexts in which technological systems operate.
+    My work sits at the intersections of artificial intelligence, epistemic agency,
+    regulation, institutions, and international affairs.
   </p>
 
-
-  <!-- INTERSECTION MAP -->
-
-  <div class="map-intro">
-    <strong>Research areas</strong>
-    <br>
+  <p class="instruction">
     Click where two areas overlap to reveal the work at that intersection.
-  </div>
+  </p>
 
+  <div class="research-map">
 
-  <div class="map">
-
-    <div class="circle ai">
-      Artificial<br>Intelligence
+    <div class="circle circle-ai">
+      <div class="circle-label">Artificial<br>Intelligence</div>
     </div>
 
-    <div class="circle agency">
-      Epistemic<br>Agency
+    <div class="circle circle-epistemic">
+      <div class="circle-label">Epistemic<br>Agency</div>
     </div>
 
-    <div class="circle law">
-      Regulation<br>& Law
+    <div class="circle circle-regulation">
+      <div class="circle-label">Regulation<br>&amp; Law</div>
     </div>
 
-    <div class="circle institutions">
-      Institutions<br>& Power
+    <div class="circle circle-institutions">
+      <div class="circle-label">Institutions<br>&amp; Power</div>
     </div>
 
-    <div class="circle international">
-      International<br>Affairs
+    <div class="circle circle-international">
+      <div class="circle-label">International<br>Affairs</div>
     </div>
 
+    <div class="intersection i-1"
+         onclick="showWork('ai-epistemic')"
+         aria-label="Artificial Intelligence and Epistemic Agency"></div>
 
-    <!-- CLICKABLE INTERSECTIONS -->
+    <div class="intersection i-2"
+         onclick="showWork('ai-regulation')"
+         aria-label="Artificial Intelligence and Regulation and Law"></div>
 
-    <button class="intersection i1"
-      onclick="showWork('ai-agency')"
-      aria-label="Artificial Intelligence and Epistemic Agency">
-    </button>
+    <div class="intersection i-3"
+         onclick="showWork('epistemic-institutions')"
+         aria-label="Epistemic Agency and Institutions and Power"></div>
 
-    <button class="intersection i2"
-      onclick="showWork('ai-law')"
-      aria-label="Artificial Intelligence and Regulation and Law">
-    </button>
+    <div class="intersection i-4"
+         onclick="showWork('regulation-institutions')"
+         aria-label="Regulation and Law and Institutions and Power"></div>
 
-    <button class="intersection i3"
-      onclick="showWork('agency-institutions')"
-      aria-label="Epistemic Agency and Institutions and Power">
-    </button>
-
-    <button class="intersection i4"
-      onclick="showWork('law-institutions')"
-      aria-label="Regulation and Law and Institutions and Power">
-    </button>
-
-    <button class="intersection i5"
-      onclick="showWork('institutions-international')"
-      aria-label="Institutions and Power and International Affairs">
-    </button>
+    <div class="intersection i-5"
+         onclick="showWork('institutions-international')"
+         aria-label="Institutions and Power and International Affairs"></div>
 
   </div>
 
+  <section class="work-display">
 
-  <!-- AI + EPISTEMIC AGENCY -->
+    <article id="ai-epistemic" class="work">
+      <div class="work-intersection">
+        Artificial Intelligence ∩ Epistemic Agency
+      </div>
 
-  <div id="ai-agency" class="work">
+      <h2>AI Travel Planners and Epistemic Agency</h2>
 
-    <div class="work-kicker">
-      Artificial Intelligence ∩ Epistemic Agency
+      <p class="work-meta">
+        <strong>Status:</strong> Current research interest
+      </p>
+
+      <p class="work-description">
+        This project examines how AI travel planners can shape users' epistemic agency:
+        their ability to understand their circumstances, evaluate alternatives, and
+        decide what is possible for them. It asks when recommendations become
+        contextually wrong even when they are factually accurate, particularly when
+        systems rely on assumptions about infrastructure, security, mobility,
+        leisure, and everyday life in Mexico.
+      </p>
+    </article>
+
+
+    <article id="ai-regulation" class="work">
+      <div class="work-intersection">
+        Artificial Intelligence ∩ Regulation &amp; Law
+      </div>
+
+      <h2>
+        Configuring AI Decision-Making Capacity in the European Union
+      </h2>
+
+      <p class="work-meta">
+        <strong>Status:</strong> Undergraduate thesis · BUAP · 2016–2024
+      </p>
+
+      <p class="work-description">
+        My undergraduate thesis examines how the decision-making capacity of artificial
+        intelligence is configured through the European Union's regulatory ecosystem.
+        It traces the development of relevant rules and institutional arrangements from
+        data protection and biometric provisions to the AI Act, focusing on how legal
+        and regulatory frameworks define, delimit, and organize the field of action
+        available to AI systems.
+      </p>
+    </article>
+
+
+    <article id="epistemic-institutions" class="work">
+      <div class="work-intersection">
+        Epistemic Agency ∩ Institutions &amp; Power
+      </div>
+
+      <h2>Automation, Subjectivity &amp; Critical Theory</h2>
+
+      <p class="work-meta">
+        <strong>Status:</strong> Research seminar
+      </p>
+
+      <p class="work-description">
+        This line of work considers AI through questions of subjectivity, knowledge,
+        and power. Drawing on critical theory, political economy, psychoanalysis,
+        and the Frankfurt School, it explores how technological systems participate
+        in shaping the conditions through which people understand themselves,
+        interpret their surroundings, and act within institutional structures.
+      </p>
+    </article>
+
+
+    <article id="regulation-institutions" class="work">
+      <div class="work-intersection">
+        Regulation &amp; Law ∩ Institutions &amp; Power
+      </div>
+
+      <h2>
+        AI Regulation and Institutional Configuration in the European Union
+      </h2>
+
+      <p class="work-meta">
+        <strong>Status:</strong> Research focus
+      </p>
+
+      <p class="work-description">
+        This research focus approaches AI regulation as an institutional process.
+        It considers the interaction between European Union institutions, Member State
+        priorities, regulatory instruments, and emerging structures for AI oversight,
+        with attention to how different actors participate in defining the boundaries
+        within which AI systems are developed and deployed.
+      </p>
+    </article>
+
+
+    <article id="institutions-international" class="work">
+      <div class="work-intersection">
+        Institutions &amp; Power ∩ International Affairs
+      </div>
+
+      <h2>Cross-Border Cyber Defense</h2>
+
+      <p class="work-meta">
+        <strong>Status:</strong> COIL Mexico–Argentina
+      </p>
+
+      <p class="work-description">
+        A comparative project examining national cybersecurity strategies in Mexico
+        and Argentina, with attention to the institutional and geopolitical contexts
+        in which cyber defense policies are developed. The project considers how
+        national approaches to cybersecurity are shaped by broader questions of
+        international relations and state capacity.
+      </p>
+    </article>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>Selected Work</h2>
+
+    <div class="selected-work">
+      <h3>AI Travel Planners and Epistemic Agency</h3>
+      <span class="status">Current research interest</span>
+      <p>
+        Examining how AI-generated recommendations shape users' ability to understand
+        context, evaluate alternatives, and navigate possibilities in Mexico.
+      </p>
     </div>
 
-    <a class="work-link" href="#">
-      AI Travel Planners and Epistemic Agency
-      <span class="arrow">→</span>
-    </a>
-
-    <span class="status">
-      Current research interest
-    </span>
-
-    <p class="work-description">
-      This project examines how AI-generated recommendations can shape a
-      person's ability to understand their circumstances, evaluate
-      alternatives, and decide what is possible for them. I am particularly
-      interested in travel-planning systems in Mexico, where a recommendation
-      may be factually accurate while still relying on assumptions about
-      infrastructure, security, mobility, leisure, and everyday life that do
-      not adequately reflect the context in which a user is making a decision.
-      The project asks how these contextual assumptions affect the space of
-      possibilities presented to users and, in turn, their epistemic agency.
-    </p>
-
-  </div>
-
-
-  <!-- AI + LAW -->
-
-  <div id="ai-law" class="work">
-
-    <div class="work-kicker">
-      Artificial Intelligence ∩ Regulation & Law
-    </div>
-
-    <a class="work-link" href="#">
-      Configuring AI Decision-Making Capacity in the European Union
-      <span class="arrow">→</span>
-    </a>
-
-    <span class="status">
-      Undergraduate thesis · BUAP · 2016–2024
-    </span>
-
-    <p class="work-description">
-      This thesis examines how the decision-making capacity of artificial
-      intelligence is configured through the European Union's regulatory
-      ecosystem between 2016 and 2024. It traces the development of the
-      normative and institutional framework surrounding AI, from early
-      data-protection and biometric provisions to the emergence of the AI Act
-      and the institutional structures that accompany it. The project focuses
-      on how European rules define, delimit, and organize the field of action
-      available to AI systems, and on the relationship between technological
-      capacities and the legal structures through which they are regulated.
-    </p>
-
-  </div>
-
-
-  <!-- AGENCY + INSTITUTIONS -->
-
-  <div id="agency-institutions" class="work">
-
-    <div class="work-kicker">
-      Epistemic Agency ∩ Institutions & Power
-    </div>
-
-    <a class="work-link" href="#">
-      Automation, Subjectivity & Critical Theory
-      <span class="arrow">→</span>
-    </a>
-
-    <span class="status">
-      Research seminar · BUAP
-    </span>
-
-    <p class="work-description">
-      This project approaches artificial intelligence through critical
-      theories of political economy, subjectivity, and power. It considers
-      how increasingly automated systems participate in the organization of
-      social relations and how technological forms can influence the ways
-      individuals understand themselves, others, and the structures in which
-      they are situated. Drawing on critical theory, psychoanalysis, and the
-      Frankfurt School, the project explores the relationship between
-      automation, subjectivity, and contemporary forms of domination without
-      treating technological systems as independent from the social relations
-      in which they are developed and used.
-    </p>
-
-  </div>
-
-
-  <!-- LAW + INSTITUTIONS -->
-
-  <div id="law-institutions" class="work">
-
-    <div class="work-kicker">
-      Regulation & Law ∩ Institutions & Power
-    </div>
-
-    <a class="work-link" href="#">
-      AI Regulation and Institutional Configuration in the European Union
-      <span class="arrow">→</span>
-    </a>
-
-    <span class="status">
-      Research focus
-    </span>
-
-    <p class="work-description">
-      This line of work examines AI regulation as an institutional process
-      rather than as a collection of isolated legal provisions. It considers
-      how European institutions, Member State priorities, regulatory
-      instruments, and emerging governance structures interact in defining
-      the conditions under which artificial intelligence can be developed and
-      deployed. The broader question is how legal rules become part of the
-      institutional architecture through which technological possibilities
-      are delimited and organized.
-    </p>
-
-  </div>
-
-
-  <!-- INSTITUTIONS + INTERNATIONAL AFFAIRS -->
-
-  <div id="institutions-international" class="work">
-
-    <div class="work-kicker">
-      Institutions & Power ∩ International Affairs
-    </div>
-
-    <a class="work-link" href="#">
-      Cross-Border Cyber Defense
-      <span class="arrow">→</span>
-    </a>
-
-    <span class="status">
-      COIL research project · Mexico & Argentina
-    </span>
-
-    <p class="work-description">
-      This comparative project examines national approaches to cybersecurity
-      through the institutional and geopolitical contexts in which they are
-      developed. Working across Mexico and Argentina, the project considers
-      how states frame cyber defense, organize institutional responsibilities,
-      and respond to a field in which technological infrastructures and
-      political interests extend beyond national borders. The project connects
-      questions of cybersecurity with broader concerns about international
-      cooperation, state capacity, and the changing relationship between
-      technology and international affairs.
-    </p>
-
-  </div>
-
-
-  <!-- SELECTED WORK -->
-
-  <section>
-    <h2 class="section-title">Selected work</h2>
-
-
-    <div class="project">
-
+    <div class="selected-work">
       <h3>
         Configuring AI Decision-Making Capacity in the European Union
       </h3>
-
-      <div class="project-meta">
-        Undergraduate Thesis · BUAP · 2024
-      </div>
-
+      <span class="status">Undergraduate thesis · BUAP · 2016–2024</span>
       <p>
-        Examining how the decision-making capacity of artificial intelligence
-        is configured through the European Union's regulatory ecosystem between
-        2016 and 2024.
+        Examining the regulatory ecosystem through which the European Union defines
+        and delimits the operational field of AI systems.
       </p>
-
     </div>
 
-
-    <div class="project">
-
-      <h3>
-        AI, Context & Epistemic Agency
-      </h3>
-
-      <div class="project-meta">
-        Current research interest
-      </div>
-
+    <div class="selected-work">
+      <h3>Automation, Subjectivity &amp; Critical Theory</h3>
+      <span class="status">Research seminar</span>
       <p>
-        Exploring how AI-generated recommendations interact with local context
-        and users' ability to understand circumstances, evaluate alternatives,
-        and navigate the possibilities presented to them.
+        Exploring the relationship between AI, subjectivity, knowledge, political
+        economy, and institutional power through critical theory.
       </p>
-
     </div>
 
-
-    <div class="project">
-
-      <h3>
-        Automation, Subjectivity & Critical Theory
-      </h3>
-
-      <div class="project-meta">
-        Research Seminar · BUAP
-      </div>
-
+    <div class="selected-work">
+      <h3>Cross-Border Cyber Defense</h3>
+      <span class="status">COIL Mexico–Argentina</span>
       <p>
-        Examining automation, subjectivity, power, and contemporary social
-        relations through critical political economy, psychoanalysis, and the
-        Frankfurt School.
+        Comparative work on national cybersecurity strategies and their institutional
+        and geopolitical contexts.
       </p>
-
-    </div>
-
-
-    <div class="project">
-
-      <h3>
-        Cross-Border Cyber Defense
-      </h3>
-
-      <div class="project-meta">
-        COIL Research Project · Mexico & Argentina
-      </div>
-
-      <p>
-        Comparative work on national cybersecurity strategies and the
-        institutional and geopolitical contexts in which they operate.
-      </p>
-
     </div>
 
   </section>
 
 
-  <!-- RESEARCH INTERESTS -->
+  <section class="research-links">
 
-  <section class="interests">
+    <h2>Research Interests</h2>
 
-    <h2 class="section-title">
-      Research interests
-    </h2>
-
-    <div class="interests-list">
-
-      <span class="interest">
-        Artificial intelligence
-      </span>
-
-      <span class="interest">
-        Epistemic agency
-      </span>
-
-      <span class="interest">
-        AI regulation
-      </span>
-
-      <span class="interest">
-        International law
-      </span>
-
-      <span class="interest">
-        Institutions & power
-      </span>
-
-      <span class="interest">
-        International affairs
-      </span>
-
-      <span class="interest">
-        Human mobility
-      </span>
-
-      <span class="interest">
-        Latin America
-      </span>
-
-    </div>
+    <p>
+      Artificial intelligence · Epistemic agency · AI regulation · International law ·
+      Institutions &amp; power · International affairs · Human mobility · Latin America
+    </p>
 
   </section>
 
+</main>
 
-  <!-- FOOTER -->
+<footer>
+  Sheyla Uscanga Vazquez ·
+  <a href="index.html">Home</a> ·
+  <a href="contact.html">Contact</a>
+</footer>
+```
 
-  <footer>
+  </div>
 
-    <a href="index.html">
-      Sheyla Uscanga Vazquez
-    </a>
+  <script>
+    function showWork(id) {
+      const works = document.querySelectorAll(".work");
 
-    ·
+      works.forEach(function(work) {
+        work.classList.remove("visible");
+      });
 
-    <a href="research.html">
-      Research
-    </a>
+      const selected = document.getElementById(id);
 
-    ·
+      if (selected) {
+        selected.classList.add("visible");
 
-    <a href="experience.html">
-      Professional Experience
-    </a>
-
-    ·
-
-    <a href="engagement.html">
-      Academic & Community Engagement
-    </a>
-
-  </footer>
-
-</div>
-
-
-<script>
-
-  function showWork(id) {
-
-    const works = document.querySelectorAll(".work");
-
-    works.forEach(function(work) {
-      work.classList.remove("active");
-    });
-
-    const selected = document.getElementById(id);
-
-    if (selected) {
-      selected.classList.add("active");
-
-      setTimeout(function() {
-        selected.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }, 50);
+        setTimeout(function() {
+          selected.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }, 40);
+      }
     }
-  }
-
-</script>
+  </script>
 
 </body>
 </html>
-```
