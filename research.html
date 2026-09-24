@@ -2,377 +2,713 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research | Sheyla Uscanga Vazquez</title>
 
-```
-<title>Research · Sheyla Uscanga Vazquez</title>
-
-<style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
     body {
-        margin: 0;
-        background: white;
-        color: #222;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 15px;
-        line-height: 1.65;
+      margin: 0;
+      background: #ffffff;
+      color: #222222;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
-    .page {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 28px 35px 55px;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 35px 30px 70px 30px;
     }
 
-    /* NAVIGATION */
+    /* Navigation */
 
     nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 30px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e5e5e5;
+      margin-bottom: 70px;
     }
 
-    .nav-name {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 17px;
+    .site-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      color: #222222;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
-    .nav-name a {
-        color: #222;
-        text-decoration: none;
+    .navigation {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .nav-links {
-        display: flex;
-        gap: 24px;
-        font-size: 14px;
+    .navigation a {
+      color: #333333;
+      text-decoration: none;
+      font-size: 14px;
     }
 
-    .nav-links a {
-        color: #222;
-        text-decoration: none;
+    .navigation a:hover {
+      text-decoration: underline;
     }
 
-    .nav-links a:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
-
-    /* CONTENT */
-
-    h1,
-    h2 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: normal;
-    }
+    /* Main heading */
 
     h1 {
-        font-size: 34px;
-        margin: 0 0 38px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 36px;
+      font-weight: normal;
+      line-height: 1.25;
+      margin: 0 0 22px 0;
+      color: #222222;
     }
 
-    h2 {
-        font-size: 22px;
-        margin: 0 0 22px;
+    .intro {
+      max-width: 720px;
+      margin-bottom: 55px;
     }
 
-    section {
-        margin-bottom: 55px;
+    /* Research map */
+
+    .research-map {
+      position: relative;
+      width: 100%;
+      max-width: 760px;
+      height: 510px;
+      margin: 10px auto 45px auto;
     }
 
-    p {
-        max-width: 780px;
+    .circle {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid #8b8b8b;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 55px;
+      cursor: pointer;
+      transition:
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease;
+      z-index: 1;
     }
 
-    /* RESEARCH INTERESTS */
-
-    .research-list {
-        margin: 0;
-        padding-left: 22px;
-        max-width: 780px;
+    .circle:hover {
+      background: rgba(240, 240, 240, 0.55);
+      border-color: #555555;
+      transform: scale(1.015);
+      z-index: 4;
     }
 
-    .research-list li {
-        margin-bottom: 9px;
+    .circle.active {
+      background: rgba(235, 235, 235, 0.75);
+      border-color: #222222;
+      z-index: 5;
     }
 
-    /* RESEARCH ITEMS */
-
-    .research-item {
-        border-top: 1px solid #ddd;
-        padding: 20px 0;
-        max-width: 800px;
+    .circle span {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.3;
     }
 
-    .research-item:last-child {
-        border-bottom: 1px solid #ddd;
+    /* Circle positions */
+
+    .ai {
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .research-title {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 19px;
-        margin-bottom: 5px;
+    .epistemic {
+      top: 155px;
+      left: 8%;
     }
 
-    .research-meta {
-        color: #666;
-        font-size: 13px;
-        margin-bottom: 10px;
+    .law {
+      top: 155px;
+      right: 8%;
     }
 
-    /* FOOTER */
+    .institutions {
+      bottom: 5px;
+      left: 23%;
+    }
+
+    .international {
+      bottom: 5px;
+      right: 23%;
+    }
+
+    .ai:hover {
+      transform: translateX(-50%) scale(1.015);
+    }
+
+    /* Intersection buttons */
+
+    .intersection {
+      position: absolute;
+      z-index: 8;
+      border: none;
+      background: transparent;
+      color: #222222;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.25;
+      text-align: center;
+      cursor: pointer;
+      padding: 8px;
+      opacity: 0.65;
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .intersection:hover,
+    .intersection.active {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+
+    .intersection::before {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin: 0 auto 6px auto;
+      border-radius: 50%;
+      border: 1px solid #555555;
+      background: #ffffff;
+      transition: background-color 0.3s ease;
+    }
+
+    .intersection:hover::before,
+    .intersection.active::before {
+      background: #222222;
+    }
+
+    .ai-epistemic {
+      top: 180px;
+      left: 31%;
+    }
+
+    .ai-law {
+      top: 180px;
+      right: 31%;
+    }
+
+    .epistemic-institutions {
+      bottom: 118px;
+      left: 35%;
+    }
+
+    .law-institutions {
+      bottom: 118px;
+      right: 35%;
+    }
+
+    .institutions-international {
+      bottom: 58px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .institutions-international:hover,
+    .institutions-international.active {
+      transform: translateX(-50%) scale(1.08);
+    }
+
+    /* Selected research */
+
+    .selected-work {
+      border-top: 1px solid #e5e5e5;
+      padding-top: 30px;
+      min-height: 175px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .selected-label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #777777;
+      margin-bottom: 10px;
+    }
+
+    .selected-work h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 1.3;
+      margin: 0 0 10px 0;
+    }
+
+    .selected-work p {
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .selected-work .meta {
+      color: #666666;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .fade {
+      animation: fadeIn 0.35s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Research interests */
+
+    .interests {
+      margin-top: 80px;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 30px;
+    }
+
+    .interests h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: normal;
+      margin: 0 0 20px 0;
+    }
+
+    .interests p {
+      margin: 0;
+      max-width: 760px;
+    }
+
+    /* Footer */
 
     footer {
-        margin-top: 70px;
-        padding-top: 22px;
-        border-top: 1px solid #ddd;
-        font-size: 13px;
-        color: #666;
+      margin-top: 75px;
+      padding-top: 18px;
+      border-top: 1px solid #e5e5e5;
+      font-size: 14px;
+      color: #555555;
     }
 
     footer a {
-        color: #666;
-        text-decoration: none;
+      color: #333333;
+      text-decoration: none;
     }
 
     footer a:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
 
-    /* MOBILE */
+    /* Mobile */
 
     @media (max-width: 700px) {
 
-        .page {
-            padding: 22px 22px 45px;
-        }
+      .container {
+        padding: 25px 20px 50px 20px;
+      }
 
-        nav {
-            display: block;
-            margin-bottom: 45px;
-        }
+      nav {
+        display: block;
+        margin-bottom: 50px;
+      }
 
-        .nav-links {
-            margin-top: 12px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+      .site-name {
+        display: block;
+        margin-bottom: 15px;
+      }
 
-        h1 {
-            font-size: 30px;
-        }
+      .navigation {
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
 
+      h1 {
+        font-size: 30px;
+      }
+
+      .research-map {
+        height: 650px;
+        max-width: 500px;
+      }
+
+      .circle {
+        width: 190px;
+        height: 190px;
+        padding: 35px;
+      }
+
+      .circle span {
+        font-size: 15px;
+      }
+
+      .ai {
+        top: 10px;
+      }
+
+      .epistemic {
+        top: 150px;
+        left: 0;
+      }
+
+      .law {
+        top: 150px;
+        right: 0;
+      }
+
+      .institutions {
+        bottom: 70px;
+        left: 4%;
+      }
+
+      .international {
+        bottom: 70px;
+        right: 4%;
+      }
+
+      .intersection {
+        font-size: 11px;
+      }
+
+      .ai-epistemic {
+        top: 165px;
+        left: 26%;
+      }
+
+      .ai-law {
+        top: 165px;
+        right: 26%;
+      }
+
+      .epistemic-institutions {
+        bottom: 160px;
+        left: 27%;
+      }
+
+      .law-institutions {
+        bottom: 160px;
+        right: 27%;
+      }
+
+      .institutions-international {
+        bottom: 105px;
+      }
     }
 
-</style>
-```
+    @media (prefers-reduced-motion: reduce) {
+      .circle,
+      .intersection,
+      .fade {
+        transition: none;
+        animation: none;
+      }
+    }
+  </style>
 
 </head>
 
 <body>
 
-<div class="page">
+  <div class="container">
 
 ```
-<!-- NAVIGATION -->
-
 <nav>
+  <a class="site-name" href="index.html">
+    Sheyla Uscanga Vazquez
+  </a>
 
-    <div class="nav-name">
-        <a href="index.html">
-            Sheyla Uscanga Vazquez
-        </a>
-    </div>
-
-    <div class="nav-links">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="research.html">
-            Research
-        </a>
-
-        <a href="experience.html">
-            Professional Experience
-        </a>
-
-        <a href="cv.html">
-            CV
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </div>
-
+  <div class="navigation">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="experience.html">Professional Experience</a>
+    <a href="engagement.html">Academic & Community Engagement</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 
 
-<!-- RESEARCH -->
-
 <main>
 
-    <h1>
-        Research
-    </h1>
+  <h1>Research</h1>
+
+  <p class="intro">
+    My work sits at the intersections of artificial intelligence,
+    epistemic agency, regulation, institutions, and international affairs.
+    Click on an area or intersection to explore the questions and projects
+    that emerge from these connections.
+  </p>
 
 
-    <section>
+  <section class="research-map" aria-label="Research areas and intersections">
 
-        <h2>
-            Research interests
-        </h2>
+    <button class="circle ai" data-key="ai" type="button">
+      <span>Artificial<br>Intelligence</span>
+    </button>
 
-        <ul class="research-list">
+    <button class="circle epistemic" data-key="epistemic" type="button">
+      <span>Epistemic<br>Agency</span>
+    </button>
 
-            <li>
-                Artificial intelligence, decision-making, and epistemic agency
-            </li>
+    <button class="circle law" data-key="law" type="button">
+      <span>Regulation<br>&amp; Law</span>
+    </button>
 
-            <li>
-                AI governance and regulation
-            </li>
+    <button class="circle institutions" data-key="institutions" type="button">
+      <span>Institutions<br>&amp; Power</span>
+    </button>
 
-            <li>
-                International law
-            </li>
-
-            <li>
-                Institutions and political systems
-            </li>
-
-            <li>
-                Migration and human mobility
-            </li>
-
-            <li>
-                International affairs and diplomacy
-            </li>
-
-            <li>
-                Latin America
-            </li>
-
-            <li>
-                Critical approaches to artificial intelligence
-            </li>
-
-        </ul>
-
-    </section>
+    <button class="circle international" data-key="international" type="button">
+      <span>International<br>Affairs</span>
+    </button>
 
 
-    <section>
+    <button class="intersection ai-epistemic"
+            data-key="ai-epistemic"
+            type="button">
+      AI + Epistemic Agency
+    </button>
 
-        <h2>
-            Current and recent work
-        </h2>
+    <button class="intersection ai-law"
+            data-key="ai-law"
+            type="button">
+      AI + Regulation
+    </button>
 
+    <button class="intersection epistemic-institutions"
+            data-key="epistemic-institutions"
+            type="button">
+      Agency + Institutions
+    </button>
 
-        <div class="research-item">
+    <button class="intersection law-institutions"
+            data-key="law-institutions"
+            type="button">
+      Law + Institutions
+    </button>
 
-            <div class="research-title">
-                Configuring AI Decision-Making Capacity in the European Union
-            </div>
+    <button class="intersection institutions-international"
+            data-key="institutions-international"
+            type="button">
+      Institutions + International Affairs
+    </button>
 
-            <div class="research-meta">
-                Undergraduate Thesis · BUAP · 2024
-            </div>
-
-            <div>
-                Examining how the decision-making capacity of artificial
-                intelligence is configured through the European Union's
-                regulatory ecosystem between 2016 and 2024.
-            </div>
-
-        </div>
-
-
-        <div class="research-item">
-
-            <div class="research-title">
-                AI, Context & Epistemic Agency
-            </div>
-
-            <div class="research-meta">
-                Current research interest
-            </div>
-
-            <div>
-                Exploring how AI-generated recommendations interact with
-                local contexts and shape users' ability to understand their
-                circumstances, evaluate alternatives, and navigate the
-                possibilities available to them.
-            </div>
-
-        </div>
+  </section>
 
 
-        <div class="research-item">
+  <section class="selected-work" aria-live="polite">
 
-            <div class="research-title">
-                Automation, Subjectivity & Critical Theory
-            </div>
+    <div id="selected-content">
 
-            <div class="research-meta">
-                Research Seminar · BUAP
-            </div>
+      <div class="selected-label">
+        Explore a connection
+      </div>
 
-            <div>
-                Exploring artificial intelligence through critical political
-                economy, psychoanalysis, and Frankfurt School critical theory,
-                with attention to automation, subjectivity, power, and
-                contemporary social relations.
-            </div>
+      <h2>Research at the intersections</h2>
 
-        </div>
+      <p>
+        Select an area or intersection above to see how it connects to
+        my current research interests and projects.
+      </p>
+
+    </div>
+
+  </section>
 
 
-        <div class="research-item">
+  <section class="interests">
 
-            <div class="research-title">
-                Cross-Border Cyber Defense
-            </div>
+    <h2>Research interests</h2>
 
-            <div class="research-meta">
-                COIL Research Project · Mexico & Argentina
-            </div>
+    <p>
+      Artificial intelligence and decision-making; epistemic agency and
+      context; AI regulation and institutional design; international law;
+      institutions and political systems; human mobility and migration;
+      international affairs and diplomacy; Latin America; and critical
+      approaches to artificial intelligence.
+    </p>
 
-            <div>
-                Comparative research on national cybersecurity strategies
-                in Mexico and Argentina, examining how technological and
-                security challenges are shaped by different institutional
-                and geopolitical contexts.
-            </div>
-
-        </div>
-
-    </section>
+  </section>
 
 </main>
 
 
-<!-- FOOTER -->
-
 <footer>
-
-    <a href="index.html">
-        Sheyla Uscanga Vazquez
-    </a>
-
-    ·
-
-    International Relations · Mexico
-
+  <a href="index.html">Sheyla Uscanga Vazquez</a> ·
+  <a href="research.html">Research</a> ·
+  <a href="experience.html">Professional Experience</a> ·
+  <a href="engagement.html">Academic & Community Engagement</a> ·
+  <a href="cv.html">CV</a>
 </footer>
 ```
 
-</div>
+  </div>
+
+  <script>
+
+    const researchData = {
+
+      ai: {
+        label: "Research area",
+        title: "Artificial Intelligence",
+        meta: "Current research focus",
+        text:
+          "My work examines how artificial intelligence systems operate within institutional and social contexts, with particular attention to decision-making, regulation, and the ways AI-mediated systems can shape what people understand and consider possible."
+      },
+
+      epistemic: {
+        label: "Research area",
+        title: "Epistemic Agency",
+        meta: "Current research interest",
+        text:
+          "I am interested in how AI-generated recommendations can influence the conditions under which people understand their circumstances, evaluate alternatives, and navigate the possibilities available to them."
+      },
+
+      law: {
+        label: "Research area",
+        title: "Regulation & Law",
+        meta: "AI regulation · International law",
+        text:
+          "This area brings together my interests in international law and the regulatory frameworks through which institutions define the permissible fields of action of emerging technologies."
+      },
+
+      institutions: {
+        label: "Research area",
+        title: "Institutions & Power",
+        meta: "Institutions · Political systems",
+        text:
+          "I am interested in how institutional structures, political priorities, and relations of power shape the development and regulation of technologies."
+      },
+
+      international: {
+        label: "Research area",
+        title: "International Affairs",
+        meta: "International Relations · Diplomacy",
+        text:
+          "My background in International Relations informs questions about how states, institutions, legal frameworks, and transnational actors interact around emerging technological and political challenges."
+      },
+
+      "ai-epistemic": {
+        label: "Intersection",
+        title: "AI, Context & Epistemic Agency",
+        meta: "Current research interest",
+        text:
+          "I explore how AI-generated recommendations can become contextually wrong even when they are factually accurate, and how assumptions about infrastructure, security, mobility, and everyday life can shape the options presented to users."
+      },
+
+      "ai-law": {
+        label: "Intersection",
+        title: "Configuring AI Decision-Making Capacity in the European Union",
+        meta: "Undergraduate thesis · BUAP · 2016–2024",
+        text:
+          "Examining how the decision-making capacity of artificial intelligence is configured through the European Union's regulatory ecosystem between 2016 and 2024."
+      },
+
+      "epistemic-institutions": {
+        label: "Intersection",
+        title: "Epistemic Agency & Institutional Context",
+        meta: "Research direction",
+        text:
+          "This intersection considers how the contexts in which AI systems are developed and deployed can affect the conditions under which people interpret information, evaluate alternatives, and exercise judgment."
+      },
+
+      "law-institutions": {
+        label: "Intersection",
+        title: "Regulation, Institutions & AI",
+        meta: "AI governance and regulation",
+        text:
+          "I examine the relationship between regulatory frameworks and the institutions through which technological systems are defined, categorized, constrained, and implemented."
+      },
+
+      "institutions-international": {
+        label: "Intersection",
+        title: "Automation, Subjectivity & Critical Theory",
+        meta: "Research Seminar · BUAP",
+        text:
+          "A critical approach to automation drawing on political economy, psychoanalysis, and the Frankfurt School to consider relationships between technology, subjectivity, power, and contemporary social relations."
+      }
+
+    };
+
+
+    const buttons = document.querySelectorAll(
+      ".circle, .intersection"
+    );
+
+    const content = document.getElementById(
+      "selected-content"
+    );
+
+
+    buttons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        buttons.forEach(item => {
+          item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const key = button.dataset.key;
+        const item = researchData[key];
+
+        content.classList.remove("fade");
+
+        void content.offsetWidth;
+
+        content.innerHTML = `
+          <div class="selected-label">
+            ${item.label}
+          </div>
+
+          <h2>
+            ${item.title}
+          </h2>
+
+          <div class="meta">
+            ${item.meta}
+          </div>
+
+          <p>
+            ${item.text}
+          </p>
+        `;
+
+        content.classList.add("fade");
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
