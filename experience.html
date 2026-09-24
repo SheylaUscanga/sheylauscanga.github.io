@@ -1,318 +1,755 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Professional Experience · Sheyla Uscanga Vazquez</title>
+  <title>Professional Experience | Sheyla Uscanga Vazquez</title>
 
-<style>
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
 
     body {
-        margin: 0;
-        background: white;
-        color: #222;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 15px;
-        line-height: 1.65;
+      margin: 0;
+      background: #ffffff;
+      color: #252525;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
     }
 
     .page {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 28px 35px 55px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 34px 28px 90px;
     }
 
-    /* NAVIGATION */
+
+    /* ---------------- NAVIGATION ---------------- */
 
     nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 30px;
+
+      padding-bottom: 18px;
+      margin-bottom: 72px;
+
+      border-bottom: 1px solid #d7d7d7;
     }
 
-    .nav-name {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 17px;
+    nav .name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      white-space: nowrap;
     }
 
-    .nav-name a {
-        color: #222;
-        text-decoration: none;
+    nav .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 17px;
     }
 
-    .nav-links {
-        display: flex;
-        gap: 24px;
-        font-size: 14px;
+    nav a {
+      color: #252525;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
-    .nav-links a {
-        color: #222;
-        text-decoration: none;
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    .nav-links a:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
 
-    /* CONTENT */
+    /* ---------------- TYPOGRAPHY ---------------- */
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+    }
 
     h1 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 34px;
-        font-weight: normal;
-        margin: 0 0 40px;
+      font-size: 2.45rem;
+      margin: 0 0 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 0 0 62px;
+      font-size: 1rem;
+    }
+
+
+    /* ---------------- EXPERIENCE LIST ---------------- */
+
+    .experience-list {
+      border-top: 1px solid #d0d0d0;
     }
 
     .experience-item {
-        border-top: 1px solid #ddd;
-        padding: 22px 0 26px;
-        max-width: 800px;
+      border-bottom: 1px solid #d0d0d0;
     }
 
-    .experience-item:last-child {
-        border-bottom: 1px solid #ddd;
+
+    /* CLICKABLE HEADER */
+
+    .experience-button {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 30px;
+
+      padding: 27px 0 28px;
+
+      border: none;
+      background: transparent;
+
+      color: #252525;
+      text-align: left;
+
+      cursor: pointer;
     }
+
+    .experience-button:hover .experience-title {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
 
     .experience-title {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 19px;
-        margin-bottom: 3px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      margin-bottom: 7px;
     }
 
     .experience-meta {
-        color: #666;
-        font-size: 13px;
-        margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: #666666;
     }
 
-    .experience-item p {
-        margin: 0;
-        max-width: 780px;
+
+    /* ARROW */
+
+    .experience-arrow {
+      align-self: center;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+
+      transition:
+        transform 0.25s ease;
     }
 
-    /* FOOTER */
+    .experience-button:hover .experience-arrow {
+      transform: translateX(4px);
+    }
+
+
+    /* ---------------- EXPANDED CONTENT ---------------- */
+
+    .experience-content {
+      display: none;
+
+      max-width: 790px;
+
+      padding: 0 0 32px;
+
+      animation: reveal 0.3s ease;
+    }
+
+    .experience-content.active {
+      display: block;
+    }
+
+    @keyframes reveal {
+
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    .experience-description {
+      margin: 0 0 22px;
+    }
+
+
+    .details {
+      margin-top: 24px;
+
+      padding: 19px 22px;
+
+      border-left: 1px solid #bdbdbd;
+
+      background: #fafafa;
+    }
+
+    .details-label {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.98rem;
+      margin-bottom: 7px;
+    }
+
+    .details p {
+      margin: 0;
+      font-size: 0.93rem;
+      color: #444444;
+    }
+
+
+    /* ---------------- LINKS ---------------- */
+
+    .experience-link {
+      color: #252525;
+      text-decoration: none;
+      border-bottom: 1px solid #999999;
+    }
+
+    .experience-link:hover {
+      border-bottom-color: #252525;
+    }
+
+
+    /* ---------------- FOOTER ---------------- */
 
     footer {
-        margin-top: 70px;
-        padding-top: 22px;
-        border-top: 1px solid #ddd;
-        font-size: 13px;
-        color: #666;
+      margin-top: 85px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid #d7d7d7;
+
+      font-size: 0.88rem;
+      color: #555555;
     }
 
     footer a {
-        color: #666;
-        text-decoration: none;
+      color: #252525;
+      text-decoration: none;
     }
 
     footer a:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
 
-    /* MOBILE */
+
+    /* ---------------- MOBILE ---------------- */
 
     @media (max-width: 700px) {
 
-        .page {
-            padding: 22px 22px 45px;
-        }
+      .page {
+        padding: 25px 20px 60px;
+      }
 
-        nav {
-            display: block;
-            margin-bottom: 45px;
-        }
+      nav {
+        display: block;
+        margin-bottom: 52px;
+      }
 
-        .nav-links {
-            margin-top: 12px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+      nav .name {
+        display: block;
+        margin-bottom: 15px;
+      }
 
-        h1 {
-            font-size: 30px;
-        }
+      nav .links {
+        justify-content: flex-start;
+        gap: 10px 15px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .experience-button {
+        grid-template-columns: 1fr auto;
+        column-gap: 15px;
+      }
+
+      .experience-title {
+        font-size: 1.15rem;
+      }
+
+      .experience-meta {
+        font-size: 0.84rem;
+      }
 
     }
 
-</style>
-```
-
+  </style>
 </head>
+
 
 <body>
 
 <div class="page">
 
-```
-<!-- NAVIGATION -->
 
-<nav>
+  <!-- NAVIGATION -->
 
-    <div class="nav-name">
-        <a href="index.html">
-            Sheyla Uscanga Vazquez
-        </a>
+  <nav>
+
+    <div class="name">
+      Sheyla Uscanga Vazquez
     </div>
 
-    <div class="nav-links">
+    <div class="links">
 
-        <a href="index.html">
-            Home
-        </a>
+      <a href="index.html">Home</a>
 
-        <a href="research.html">
-            Research
-        </a>
+      <a href="research.html">Research</a>
 
-        <a href="experience.html">
-            Professional Experience
-        </a>
+      <a href="experience.html">Professional Experience</a>
 
-        <a href="cv.html">
-            CV
-        </a>
+      <a href="engagement.html">
+        Academic & Community Engagement
+      </a>
 
-        <a href="contact.html">
-            Contact
-        </a>
+      <a href="cv.html">CV</a>
+
+      <a href="contact.html">Contact</a>
 
     </div>
 
-</nav>
+  </nav>
 
 
-<!-- PROFESSIONAL EXPERIENCE -->
+  <!-- INTRO -->
 
-<main>
+  <h1>Professional Experience</h1>
 
-    <h1>
-        Professional Experience
-    </h1>
+  <p class="intro">
+    My professional experience has brought me into contact with migration,
+    consular affairs, electoral processes, international affairs, and
+    youth programs. Across these settings, I have worked at the intersection
+    of institutions, public-facing processes, and international contexts.
+  </p>
 
+
+  <!-- EXPERIENCE -->
+
+  <div class="experience-list">
+
+
+    <!-- USCRI -->
 
     <div class="experience-item">
 
-        <div class="experience-title">
+      <button
+        class="experience-button"
+        onclick="toggleExperience('uscri')"
+        aria-expanded="false"
+      >
+
+        <div>
+
+          <div class="experience-title">
             Migration & Intercultural Affairs
+          </div>
+
+          <div class="experience-meta">
+            USCRI LAC-RECIBE · Mexico · 2023–Present
+          </div>
+
         </div>
 
-        <div class="experience-meta">
-            USCRI LAC-RECIBE · Mexico
+        <div class="experience-arrow">
+          →
         </div>
 
-        <p>
-            Work supporting people in situations of migration and
-            displacement, with experience in administrative processes,
-            documentation, legal-orientation protocols, intercultural
-            initiatives, and university-community activities.
+      </button>
+
+
+      <div id="uscri" class="experience-content">
+
+        <p class="experience-description">
+          Worked within a university-community initiative focused on
+          migration, displacement, and intercultural engagement. My work has
+          included monitoring and organizing mobility-related files,
+          supporting documentation processes, and assisting people in
+          mobility situations through legal-orientation protocols and
+          university support.
         </p>
+
+        <p class="experience-description">
+          I have also contributed to intercultural initiatives through
+          documentation and project coordination, as well as to events
+          connecting public and university sectors around migration and
+          mobility.
+        </p>
+
+        <div class="details">
+
+          <div class="details-label">
+            Selected responsibilities
+          </div>
+
+          <p>
+            Mobility-file management · Documentation · Legal orientation
+            support · Intercultural initiatives · University-community
+            activities · Event logistics
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
 
+    <!-- SRE -->
+
     <div class="experience-item">
 
-        <div class="experience-title">
+      <button
+        class="experience-button"
+        onclick="toggleExperience('sre')"
+        aria-expanded="false"
+      >
+
+        <div>
+
+          <div class="experience-title">
             Consular Affairs
-        </div>
+          </div>
 
-        <div class="experience-meta">
+          <div class="experience-meta">
             Secretaría de Relaciones Exteriores · Puebla
+          </div>
+
         </div>
 
-        <p>
-            Experience supporting consular assistance and protection
-            services, including attention to nationals and international
-            visitors, documentation processes, and cases involving
-            mobility and repatriation procedures.
+        <div class="experience-arrow">
+          →
+        </div>
+
+      </button>
+
+
+      <div id="sre" class="experience-content">
+
+        <p class="experience-description">
+          Supported activities related to consular assistance and protection
+          for people requiring administrative or documentation support in
+          matters connected to mobility outside Mexican territory.
         </p>
+
+        <p class="experience-description">
+          The work involved assisting members of the public, organizing
+          documentation, and supporting procedures handled by the consular
+          assistance area, including cases related to repatriation and the
+          transmission of official documentation.
+        </p>
+
+        <div class="details">
+
+          <div class="details-label">
+            Area
+          </div>
+
+          <p>
+            Consular assistance and protection · Documentation ·
+            Mobility-related procedures · Public service
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
 
+    <!-- INE -->
+
     <div class="experience-item">
 
-        <div class="experience-title">
-            Law Consultant
-        </div>
+      <button
+        class="experience-button"
+        onclick="toggleExperience('ine')"
+        aria-expanded="false"
+      >
 
-        <div class="experience-meta">
+        <div>
+
+          <div class="experience-title">
+            Electoral Processes
+          </div>
+
+          <div class="experience-meta">
             Instituto Nacional Electoral · 2025
+          </div>
+
         </div>
 
-        <p>
-            Participated in the 2025 electoral process and coordinated
-            a team working with a new voter-data control and registration
-            system, supporting the organization and management of
-            electoral information.
+        <div class="experience-arrow">
+          →
+        </div>
+
+      </button>
+
+
+      <div id="ine" class="experience-content">
+
+        <p class="experience-description">
+          Participated in the 2025 electoral process for the election of
+          members of the Judiciary, supporting operational activities related
+          to electoral information and voter data.
         </p>
+
+        <p class="experience-description">
+          I also coordinated a team working with a newly implemented system
+          for the control and capture of voter data, helping organize the
+          workflow and maintain consistency in the information being processed.
+        </p>
+
+        <div class="details">
+
+          <div class="details-label">
+            Focus
+          </div>
+
+          <p>
+            Electoral operations · Voter data · Team coordination ·
+            Information management
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
 
+    <!-- MINERVA -->
+
     <div class="experience-item">
 
-        <div class="experience-title">
-            International Affairs & Model United Nations
-        </div>
+      <button
+        class="experience-button"
+        onclick="toggleExperience('minerva')"
+        aria-expanded="false"
+      >
 
-        <div class="experience-meta">
+        <div>
+
+          <div class="experience-title">
+            International Affairs & Student Delegation
+          </div>
+
+          <div class="experience-meta">
             Delegación Minerva · BUAP
+          </div>
+
         </div>
 
-        <p>
-            Represented Mexico, France, and Chile in simulations focused
-            on international security and legal cooperation, developing
-            proposals related to international legal structures and
-            comparative approaches to migration and asylum legislation.
+        <div class="experience-arrow">
+          →
+        </div>
+
+      </button>
+
+
+      <div id="minerva" class="experience-content">
+
+        <p class="experience-description">
+          Member of a student delegation at BUAP focused on preparation and
+          participation in Model United Nations. The delegation combines
+          internal training classes with participation in several MUNs,
+          developing skills in research, public speaking, negotiation,
+          diplomatic representation, and multilateral procedure.
         </p>
+
+        <p class="experience-description">
+          Represented Mexico, France, and Chile in committees focused on
+          international security and international legal cooperation.
+          Contributed to proposals concerning international legal structures
+          and participated in comparative work on migration and asylum
+          legislation involving delegations from ten countries.
+        </p>
+
+        <div class="details">
+
+          <div class="details-label">
+            Activities
+          </div>
+
+          <p>
+            MUN preparation classes · Model United Nations ·
+            Diplomatic representation · International legal cooperation ·
+            Comparative migration and asylum law
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
+
+    <!-- GLORIETA -->
 
     <div class="experience-item">
 
-        <div class="experience-title">
+      <button
+        class="experience-button"
+        onclick="toggleExperience('glorieta')"
+        aria-expanded="false"
+      >
+
+        <div>
+
+          <div class="experience-title">
             International Youth Programs
+          </div>
+
+          <div class="experience-meta">
+            Glorieta Adventure Camps · New Mexico, USA · 2024
+          </div>
+
         </div>
 
-        <div class="experience-meta">
-            Glorieta Adventure Camps · New Mexico, USA
+        <div class="experience-arrow">
+          →
         </div>
 
-        <p>
-            Participated in a summer international program supporting
-            youth activities, sports, community life, and day-to-day
-            operations in a multicultural environment.
+      </button>
+
+
+      <div id="glorieta" class="experience-content">
+
+        <p class="experience-description">
+          Participated in a summer international program working with youth
+          in a multicultural camp environment. Supported recreational and
+          community activities while contributing to the daily operation of
+          the camp.
         </p>
+
+        <p class="experience-description">
+          The experience involved working across different cultural and
+          linguistic backgrounds and adapting to a fast-moving environment
+          centered on youth programs and community life.
+        </p>
+
+        <div class="details">
+
+          <div class="details-label">
+            Focus
+          </div>
+
+          <p>
+            Youth programs · Sports activities · Intercultural communication ·
+            Community life · International experience
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
-</main>
+
+  </div>
 
 
-<!-- FOOTER -->
+  <!-- FOOTER -->
 
-<footer>
+  <footer>
 
     <a href="index.html">
-        Sheyla Uscanga Vazquez
+      Sheyla Uscanga Vazquez
     </a>
 
     ·
 
-    International Relations · Mexico
+    <a href="research.html">
+      Research
+    </a>
 
-</footer>
-```
+    ·
+
+    <a href="engagement.html">
+      Academic & Community Engagement
+    </a>
+
+  </footer>
+
 
 </div>
 
+
+<script>
+
+  function toggleExperience(id) {
+
+    const selected = document.getElementById(id);
+    const button = selected.previousElementSibling;
+
+    const isOpen = selected.classList.contains("active");
+
+
+    /* Close every other experience */
+
+    document
+      .querySelectorAll(".experience-content")
+      .forEach(function(content) {
+
+        content.classList.remove("active");
+
+        const otherButton = content.previousElementSibling;
+
+        if (otherButton) {
+          otherButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+        }
+
+      });
+
+
+    /* Open selected experience */
+
+    if (!isOpen) {
+
+      selected.classList.add("active");
+
+      button.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+      setTimeout(function() {
+
+        selected.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+
+      }, 50);
+
+    }
+
+  }
+
+</script>
+
 </body>
 </html>
+```
+
