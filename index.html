@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sheyla Uscanga Vazquez</title>
 
 <style>
 
+    * {
+        box-sizing: border-box;
+    }
+
     body {
         margin: 0;
-        background: white;
-        color: #222;
+        background: #ffffff;
+        color: #252525;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 15px;
-        line-height: 1.65;
+        line-height: 1.7;
     }
 
     .page {
-        max-width: 900px;
+        max-width: 960px;
         margin: 0 auto;
-        padding: 28px 35px 55px;
+        padding: 38px 34px 65px;
     }
+
 
     /* NAVIGATION */
 
@@ -31,138 +38,181 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 65px;
+        gap: 30px;
+        padding-bottom: 19px;
+        border-bottom: 1px solid #dddddd;
+        margin-bottom: 72px;
     }
 
     .nav-name {
         font-family: Georgia, "Times New Roman", serif;
         font-size: 17px;
+        white-space: nowrap;
     }
 
     .nav-name a {
-        color: #222;
+        color: #252525;
         text-decoration: none;
     }
 
     .nav-links {
         display: flex;
-        gap: 24px;
-        font-size: 14px;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 13px;
     }
 
     .nav-links a {
-        color: #222;
+        color: #252525;
         text-decoration: none;
+        transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
+        color: #555555;
         text-decoration: underline;
         text-underline-offset: 3px;
     }
+
 
     /* PROFILE */
 
     .profile {
         display: grid;
         grid-template-columns: 170px 1fr;
-        gap: 35px;
-        margin-bottom: 55px;
+        gap: 38px;
+        margin-bottom: 64px;
     }
 
     .profile-image {
         width: 150px;
-        height: 180px;
-        background: #f1f1f1;
+        height: 185px;
+        border: 1px solid #dddddd;
+        background: #f7f7f7;
     }
 
     .profile-text h1 {
         font-family: Georgia, "Times New Roman", serif;
-        font-size: 34px;
+        font-size: 38px;
+        line-height: 1.15;
         font-weight: normal;
-        margin: 0 0 5px;
+        margin: 0 0 8px;
+        color: #252525;
     }
 
     .affiliation {
-        color: #555;
-        margin-bottom: 24px;
+        color: #666666;
+        font-size: 14px;
+        margin-bottom: 28px;
     }
 
     .profile-text p {
-        margin: 0 0 18px;
+        max-width: 780px;
+        margin: 0 0 19px;
     }
 
-    /* LINKS */
+
+    /* PERSONAL LINKS */
 
     .personal-links {
         display: flex;
-        gap: 18px;
-        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 19px;
+        margin-top: 25px;
         font-size: 14px;
     }
 
     .personal-links a {
-        color: #222;
-        text-decoration: none;
+        color: #0645ad;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+        transition: color 0.2s ease;
     }
 
     .personal-links a:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
+        color: #002b6f;
     }
 
-    /* SECTIONS */
+
+    /* RESEARCH INTERESTS */
 
     section {
-        margin-top: 48px;
+        border-top: 1px solid #dddddd;
+        padding-top: 29px;
+        margin-top: 10px;
     }
 
     h2 {
         font-family: Georgia, "Times New Roman", serif;
-        font-size: 22px;
+        font-size: 23px;
+        line-height: 1.3;
         font-weight: normal;
-        margin: 0 0 22px;
+        margin: 0 0 19px;
+        color: #252525;
     }
 
-    p {
-        max-width: 780px;
+    section p {
+        max-width: 800px;
+        margin: 0;
     }
+
 
     /* FOOTER */
 
     footer {
-        margin-top: 70px;
-        padding-top: 22px;
-        border-top: 1px solid #ddd;
+        margin-top: 76px;
+        padding-top: 20px;
+        border-top: 1px solid #dddddd;
         font-size: 13px;
-        color: #666;
+        color: #777777;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     footer a {
-        color: #666;
+        color: #555555;
         text-decoration: none;
     }
 
     footer a:hover {
         text-decoration: underline;
+        text-underline-offset: 3px;
     }
 
+
     /* MOBILE */
+
+    @media (max-width: 850px) {
+
+        nav {
+            display: block;
+        }
+
+        .nav-links {
+            justify-content: flex-start;
+            margin-top: 14px;
+        }
+
+    }
+
 
     @media (max-width: 700px) {
 
         .page {
-            padding: 22px 22px 45px;
+            padding: 27px 22px 50px;
         }
 
         nav {
-            display: block;
-            margin-bottom: 45px;
+            margin-bottom: 52px;
         }
 
         .nav-links {
-            margin-top: 12px;
-            flex-wrap: wrap;
-            gap: 15px;
+            gap: 13px 17px;
         }
 
         .profile {
@@ -170,11 +220,24 @@
         }
 
         .profile-image {
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .profile-text h1 {
-            font-size: 30px;
+            font-size: 33px;
+        }
+
+        .profile-text p {
+            max-width: none;
+        }
+
+        footer {
+            display: block;
+        }
+
+        footer span {
+            display: block;
+            margin-bottom: 5px;
         }
 
     }
@@ -194,10 +257,13 @@
 <nav>
 
     <div class="nav-name">
+
         <a href="index.html">
             Sheyla Uscanga Vazquez
         </a>
+
     </div>
+
 
     <div class="nav-links">
 
@@ -214,9 +280,9 @@
         </a>
 
         <a href="engagement.html">
-            Academic & Community Engagement
-       </a>
-        
+            Academic &amp; Community Engagement
+        </a>
+
         <a href="cv.html">
             CV
         </a>
@@ -236,8 +302,12 @@
 
     <div class="profile">
 
-        <!-- TEMPORARY IMAGE PLACEHOLDER -->
-        <div class="profile-image"></div>
+
+        <!-- PHOTO -->
+
+        <div class="profile-image">
+            <!-- Your photograph can be placed here later -->
+        </div>
 
 
         <div class="profile-text">
@@ -245,6 +315,7 @@
             <h1>
                 Sheyla Uscanga Vazquez
             </h1>
+
 
             <div class="affiliation">
                 International Relations · Artificial Intelligence · International Law
@@ -281,7 +352,7 @@
 
             <div class="personal-links">
 
-                <a href="mailto:">
+                <a href="mailto:sheyla.professional@gmail.com">
                     Email
                 </a>
 
@@ -289,11 +360,11 @@
                     CV
                 </a>
 
-                <a href="#">
-                    LinkedIn
-                </a>
-
-                <a href="#">
+                <a
+                    href="https://github.com/SheylaUscanga"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     GitHub
                 </a>
 
@@ -303,6 +374,8 @@
 
     </div>
 
+
+    <!-- RESEARCH INTERESTS -->
 
     <section>
 
@@ -332,9 +405,9 @@
         Sheyla Uscanga Vazquez
     </a>
 
-    ·
-
-    International Relations · Mexico
+    <span>
+        International Relations · Mexico
+    </span>
 
 </footer>
 ```
@@ -342,4 +415,5 @@
 </div>
 
 </body>
+
 </html>
