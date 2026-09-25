@@ -1,306 +1,718 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Academic & Community Engagement | Sheyla Uscanga Vazquez</title>
+  <title>Academic & Community Engagement — Sheyla Uscanga Vazquez</title>
 
   <style>
+    :root {
+      --navy: #003049;
+      --red: #DC2F02;
+      --orange: #F77F00;
+      --cream: #EAE2B7;
+      --gold: #FCBF49;
+      --black: #000000;
+      --white: #FFFFFF;
+
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: #ffffff;
-      color: #252525;
-      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      font-family: var(--sans);
+    }
+
+    /* TOP BANNER */
+
+    .top-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 10px;
+    }
+
+    .top-banner div:nth-child(1) {
+      background: var(--navy);
+    }
+
+    .top-banner div:nth-child(2) {
+      background: var(--red);
+    }
+
+    .top-banner div:nth-child(3) {
+      background: var(--orange);
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 30px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      border-bottom: 1px solid rgba(0, 48, 73, 0.25);
+    }
+
+    .site-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .nav-links a.active {
+      color: var(--red);
+    }
+
+    /* PAGE HEADER */
+
+    .page-header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 75px 30px 65px;
+    }
+
+    .section-number {
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      max-width: 850px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -3px;
+    }
+
+    .page-header p {
+      max-width: 720px;
+      margin-top: 30px;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* INTRO */
+
+    .intro {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px 70px;
+    }
+
+    .intro-box {
+      background: var(--navy);
+      color: var(--white);
+      padding: 45px;
+      border: 3px solid var(--navy);
+      box-shadow: 10px 10px 0 var(--orange);
+    }
+
+    .intro-box h2 {
+      margin: 0 0 18px;
+      font-family: var(--serif);
+      font-size: 38px;
+      color: var(--gold);
+    }
+
+    .intro-box p {
+      max-width: 850px;
+      margin: 0;
+      font-size: 17px;
       line-height: 1.7;
     }
 
-    .page {
-      max-width: 960px;
+    /* SECTION */
+
+    .engagement-section {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 42px 34px 70px;
+      padding: 0 30px 90px;
     }
 
-    /* Navigation */
-
-    nav {
+    .section-title {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 24px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid #d8d8d8;
-      margin-bottom: 72px;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 30px;
     }
 
-    nav a {
-      color: #252525;
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #555;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* Main heading */
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
+    .section-title h2 {
+      margin: 0;
+      font-family: var(--serif);
       font-size: 42px;
-      font-weight: 400;
-      line-height: 1.15;
-      margin: 0 0 48px;
-      color: #252525;
     }
 
-    /* Engagement entries */
-
-    .engagement-list {
-      border-top: 1px solid #d8d8d8;
+    .section-title span {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .engagement-item {
-      padding: 30px 0 34px;
-      border-bottom: 1px solid #d8d8d8;
+    /* CARDS */
+
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
 
-    .engagement-item h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 23px;
-      font-weight: 400;
-      margin: 0 0 7px;
-      line-height: 1.35;
+    .engagement-card {
+      position: relative;
+      padding: 30px;
+      border: 3px solid var(--navy);
+      cursor: pointer;
+      min-height: 300px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .meta {
-      font-size: 14px;
-      color: #666;
+    .engagement-card:nth-child(1) {
+      background: var(--white);
+    }
+
+    .engagement-card:nth-child(2) {
+      background: var(--orange);
+    }
+
+    .engagement-card:nth-child(3) {
+      background: var(--gold);
+    }
+
+    .engagement-card:nth-child(4) {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .engagement-card:nth-child(5) {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .engagement-card:nth-child(6) {
+      background: var(--white);
+    }
+
+    .engagement-card:hover {
+      transform: translate(-5px, -5px);
+      box-shadow: 10px 10px 0 var(--navy);
+    }
+
+    .engagement-card .year {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       margin-bottom: 18px;
     }
 
-    .engagement-item p {
-      max-width: 800px;
+    .engagement-card h3 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 30px;
+      line-height: 1.05;
+    }
+
+    .engagement-card h4 {
+      margin: 0 0 18px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .engagement-card .preview {
       margin: 0;
       font-size: 15px;
+      line-height: 1.55;
     }
 
-    /* External / visible links */
-
-    .engagement-item a.external-link,
-    .engagement-item a {
-      color: #0645ad;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
+    .click-note {
+      position: absolute;
+      right: 25px;
+      bottom: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .engagement-item a.external-link:hover,
-    .engagement-item a:hover {
-      color: #002b6f;
+    .engagement-details {
+      display: none;
+      margin-top: 25px;
+      padding-top: 22px;
+      border-top: 2px solid currentColor;
     }
 
-    /* Footer */
+    .engagement-card.open .engagement-details {
+      display: block;
+    }
+
+    .engagement-details ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .engagement-details li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* COMMUNITY THREAD */
+
+    .community-thread {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 30px 100px;
+    }
+
+    .community-thread > div {
+      border-top: 3px solid var(--navy);
+      padding-top: 35px;
+    }
+
+    .community-thread h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 42px;
+    }
+
+    /* FOOTER */
 
     footer {
-      margin-top: 70px;
-      padding-top: 20px;
-      border-top: 1px solid #d8d8d8;
-      font-size: 13px;
-      color: #777;
+      background: var(--navy);
+      color: var(--white);
+      padding: 45px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
-      flex-wrap: wrap;
+    }
+
+    footer strong {
+      font-family: var(--serif);
+      font-size: 20px;
     }
 
     footer a {
-      color: #555;
+      color: var(--gold);
       text-decoration: none;
+      font-weight: bold;
     }
 
     footer a:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      color: var(--orange);
     }
 
-    @media (max-width: 700px) {
-      .page {
-        padding: 28px 22px 55px;
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .page-header {
+        padding-top: 55px;
+      }
+
+      .page-header h1 {
+        letter-spacing: -2px;
+      }
+
+      .intro-box {
+        padding: 30px;
+        box-shadow: 7px 7px 0 var(--orange);
+      }
+
+      .engagement-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        flex-direction: column;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .page-header,
+      .intro,
+      .engagement-section,
+      .community-thread {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
       nav {
-        gap: 14px 18px;
-        margin-bottom: 55px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
-      h1 {
-        font-size: 34px;
-        margin-bottom: 38px;
+      .page-header h1 {
+        font-size: 52px;
       }
 
-      .engagement-item {
-        padding: 25px 0 29px;
+      .intro-box {
+        padding: 25px;
+      }
+
+      .engagement-card {
+        padding: 25px;
       }
     }
   </style>
-
 </head>
 
 <body>
 
-  <div class="page">
+  <div class="top-banner">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-```
-<nav>
-  <a href="index.html">Home</a>
-  <a href="research.html">Research</a>
-  <a href="experience.html">Professional Experience</a>
-  <a href="engagement.html">Academic &amp; Community Engagement</a>
-  <a href="cv.html">CV</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav>
+    <div class="site-name">Sheyla Uscanga Vazquez</div>
 
-<main>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="experience.html">Professional Experience</a>
+      <a href="engagement.html" class="active">Academic & Community Engagement</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-  <h1>Academic &amp; Community Engagement</h1>
+  <header class="page-header">
+    <div class="section-number">04 / Academic & Community Engagement</div>
 
-  <section class="engagement-list">
+    <h1>
+      Academic &<br>
+      Community<br>
+      Engagement
+    </h1>
 
-    <article class="engagement-item">
-      <h2>Red Sociedad Internacionalista</h2>
+    <p>
+      Academic, civic, and community experiences connecting international affairs,
+      human mobility, intercultural exchange, and public engagement.
+    </p>
+  </header>
 
-      <div class="meta">
-        Member · Professional community for global studies · 35+ countries
-      </div>
-
-      <p>
-        Member of a professional community connecting students and practitioners
-        interested in global studies across more than 35 countries. Contributed to
-        the constitution of the Internationalist Charter.
-        <br><br>
-        <a
-          class="external-link"
-          href="https://v.pok.tech/r/6397e31c-96c1-4439-856c-37dadc9e3818"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View member profile
-        </a>
-      </p>
-    </article>
-
-
-    <article class="engagement-item">
-      <h2>Delegación Minerva</h2>
-
-      <div class="meta">
-        Head Representative · Mexico, France &amp; Chile · BUAP
-      </div>
+  <section class="intro">
+    <div class="intro-box">
+      <h2>Beyond the classroom.</h2>
 
       <p>
-        Student delegation at BUAP focused on preparation and participation
-        in Model United Nations. The delegation combines internal training
-        sessions with participation in several MUNs, developing research,
-        public speaking, negotiation, diplomatic representation, and
-        multilateral procedure. Represented Mexico, France, and Chile in
-        committees addressing international security and legal cooperation,
-        including proposals concerning international legal structures and
-        comparative work on migration and asylum legislation involving
-        delegations from ten countries.
+        My academic interests have developed alongside spaces of participation,
+        exchange, and community work. These experiences have allowed me to engage
+        with international affairs not only as an academic field, but also through
+        institutional, intercultural, and community contexts.
       </p>
-    </article>
-
-
-    <article class="engagement-item">
-      <h2>Comité RECIBE BUAP · USCRI LAC</h2>
-
-      <div class="meta">
-        Project Coordinator &amp; Operations Volunteer · 2023–Present
-      </div>
-
-      <p>
-        Contributed to university-community initiatives supporting students
-        in situations of mobility through legal orientation, documentation,
-        and academic support. Coordinated documentation and project operations
-        across three intercultural initiatives, including remote multilingual
-        academic advisory sessions for students in Aguascalientes and San Luis
-        Potosí. Supported a three-day mobility conference connecting public and
-        university sectors, with more than 400 attendees.
-      </p>
-    </article>
-
-
-    <article class="engagement-item">
-      <h2>AMEI</h2>
-
-      <div class="meta">
-        October 2023 · XXXVI Annual Congress · Anáhuac Mayab · Mérida, Yucatán
-      </div>
-
-      <p>
-        Participated in the XXXVI Annual Congress of the Mexican International
-        Studies Association. Contributed to thematic reports related to human
-        rights and multilateral diplomacy, while identifying and connecting
-        academic networks with actors from the foreign service and multilateral
-        organizations.
-      </p>
-    </article>
-
-
-    <article class="engagement-item">
-      <h2>Econópolis</h2>
-
-      <div class="meta">
-        Youth Lead · Youth Engagement
-      </div>
-
-      <p>
-        Participated in youth-oriented spaces focused on civic engagement,
-        contemporary public issues, and the incorporation of youth perspectives
-        into discussions of social and public affairs.
-      </p>
-    </article>
-
-
-    <article class="engagement-item">
-      <h2>Ímpetu</h2>
-
-      <div class="meta">
-        Participant · Youth &amp; Civic Engagement
-      </div>
-
-      <p>
-        Participated in youth forums and Schools for Peace spaces focused on
-        civic participation, dialogue, and engagement with contemporary social
-        issues.
-      </p>
-    </article>
-
+    </div>
   </section>
 
-</main>
+  <section class="engagement-section">
 
-<footer>
-  <span>Sheyla Uscanga Vazquez</span>
+    <div class="section-title">
+      <h2>Selected Engagement</h2>
+      <span>Click a card to expand</span>
+    </div>
 
-  <span>
-    <a href="research.html">Research</a>
-    &nbsp;·&nbsp;
-    <a href="contact.html">Contact</a>
-  </span>
-</footer>
-```
+    <div class="engagement-grid">
 
-  </div>
+      <!-- USCRI -->
+
+      <article class="engagement-card" onclick="toggleCard(this)">
+        <div class="year">2023 — Present · Volunteering</div>
+
+        <h3>USCRI LAC-RECIBE</h3>
+
+        <h4>Human Mobility & Intercultural Programs</h4>
+
+        <p class="preview">
+          Volunteer work supporting people in mobility situations, intercultural
+          initiatives, documentation processes, and university-community activities.
+        </p>
+
+        <div class="click-note">+ Details</div>
+
+        <div class="engagement-details">
+          <ul>
+            <li>
+              Supported the monitoring, registration, control, and classification
+              of mobility-related files.
+            </li>
+
+            <li>
+              Assisted users in mobility situations through legal-orientation
+              protocols and official documentation.
+            </li>
+
+            <li>
+              Developed interactive documentation for three intercultural
+              initiative projects.
+            </li>
+
+            <li>
+              Supported mobility-event logistics involving public and university
+              sectors, reaching approximately 400 attendees over three days.
+            </li>
+
+            <li>
+              Participated in remote multilingual academic advisory sessions for
+              exchange students in Aguascalientes and San Luis Potosí.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+
+      <!-- DELEGACIÓN MINERVA -->
+
+      <article class="engagement-card" onclick="toggleCard(this)">
+        <div class="year">May 2024 — Present</div>
+
+        <h3>Delegación Minerva BUAP</h3>
+
+        <h4>International Relations & Model United Nations</h4>
+
+        <p class="preview">
+          Student delegation focused on international affairs, diplomacy,
+          international legal cooperation, and Model United Nations.
+        </p>
+
+        <div class="click-note">+ Details</div>
+
+        <div class="engagement-details">
+          <ul>
+            <li>
+              Represented Mexico, France, and Chile in Model United Nations simulations.
+            </li>
+
+            <li>
+              Participated in internal preparation sessions and multiple Model
+              United Nations conferences.
+            </li>
+
+            <li>
+              Developed more than eight proposals involving juridical and
+              institutional structures.
+            </li>
+
+            <li>
+              Worked with comparative mobility and asylum legislation through
+              a ten-country simulation.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+
+      <!-- AMEI -->
+
+      <article class="engagement-card" onclick="toggleCard(this)">
+        <div class="year">October 2023 · Mérida, Mexico</div>
+
+        <h3>AMEI XXXVI Annual Congress</h3>
+
+        <h4>Academic Participation</h4>
+
+        <p class="preview">
+          Participation in the XXXVI Annual Congress of the Asociación Mexicana
+          de Estudios Internacionales at Anahuac Mayab, Yucatán.
+        </p>
+
+        <div class="click-note">+ Details</div>
+
+        <div class="engagement-details">
+          <ul>
+            <li>
+              Discussed "Globalización, Nacionalismo, Divergencia...¿Hacia dónde
+              van las relaciones internacionales?" in the context of international
+              relations and multilateral diplomacy.
+            </li>
+
+            <li>
+              Identified and connected academic networks with foreign service
+              actors and multilateral organizations.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+
+      <!-- RED SOCIEDAD INTERNACIONALISTA -->
+
+      <article class="engagement-card" onclick="toggleCard(this)">
+        <div class="year">International Academic Community</div>
+
+        <h3>Red Sociedad Internacionalista</h3>
+
+        <h4>Member</h4>
+
+        <p class="preview">
+          Professional and academic community connecting students and young
+          professionals in global studies across more than 35 countries.
+        </p>
+
+        <div class="click-note">+ Details</div>
+
+        <div class="engagement-details">
+          <ul>
+            <li>
+              Participated in an international network focused on global studies
+              and international affairs.
+            </li>
+
+            <li>
+              Participated in the constitution of the Internationalist Charter.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+
+      <!-- INTERCULTURAL COMMUNITY WORK -->
+
+      <article class="engagement-card" onclick="toggleCard(this)">
+        <div class="year">Community & University Activities</div>
+
+        <h3>Intercultural Community Work</h3>
+
+        <h4>Workshops & Community Initiatives</h4>
+
+        <p class="preview">
+          Participation in activities connecting university communities with
+          children, adolescents, and broader conversations around diversity.
+        </p>
+
+        <div class="click-note">+ Details</div>
+
+        <div class="engagement-details">
+          <ul>
+            <li>
+              Participated in DIME workshops with children and adolescents.
+            </li>
+
+            <li>
+              Contributed to university-community workshops addressing diversity
+              and intercultural exchange.
+            </li>
+
+            <li>
+              Participated in a Semana de Movilidad Intercultural and interactive
+              activity reaching approximately 400 attendees over three days.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+
+      <!-- YOUTH CIVIC ENGAGEMENT -->
+
+      <article class="engagement-card" onclick="toggleCard(this)">
+        <div class="year">Civic & Youth Participation</div>
+
+        <h3>Youth Civic Engagement</h3>
+
+        <h4>Civic Participation & Leadership</h4>
+
+        <p class="preview">
+          Earlier and ongoing participation in youth-oriented civic spaces,
+          including public forums and community initiatives.
+        </p>
+
+        <div class="click-note">+ Details</div>
+
+        <div class="engagement-details">
+          <ul>
+            <li>
+              Participated in youth forums and civic engagement spaces including
+              Econópolis and Ímpetu, an initiative of the UN Youth Office.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <section class="community-thread">
+    <div>
+      <h2>Learning through participation.</h2>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="footer-inner">
+      <strong>Sheyla Uscanga Vazquez</strong>
+
+      <a href="contact.html">Get in touch →</a>
+    </div>
+  </footer>
+
+
+  <script>
+    function toggleCard(card) {
+      card.classList.toggle("open");
+    }
+  </script>
 
 </body>
 </html>
+```
