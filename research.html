@@ -145,9 +145,9 @@
     }
 
     /*
-      The circles use all five research colors.
-      Their overlap areas are represented by black
-      interactive buttons.
+      The five circles form one connected research map.
+      The black areas function as the visible intersections
+      between neighboring research areas.
     */
 
     .circle {
@@ -208,8 +208,9 @@
     }
 
     /*
-      Black intersection buttons.
-      Each one sits over an overlap between two circles.
+      Black intersections.
+      They sit directly over the connected areas between circles
+      and are the clickable entry points to each research connection.
     */
 
     .intersection {
@@ -219,7 +220,7 @@
       height: 68px;
       border-radius: 50%;
       background: var(--black);
-      border: 3px solid var(--cream);
+      border: 3px solid var(--black);
       color: var(--white);
       cursor: pointer;
       display: flex;
@@ -236,7 +237,6 @@
 
     .intersection:hover {
       transform: scale(1.1);
-      background: var(--navy);
     }
 
     .intersection.selected {
@@ -379,8 +379,9 @@
       display: grid;
       grid-template-columns: 180px 1fr;
       gap: 28px;
-      padding: 22px 0;
+      padding: 30px 0;
       border-bottom: 1px solid rgba(0, 48, 73, 0.35);
+      scroll-margin-top: 30px;
     }
 
     .work-meta {
@@ -398,9 +399,25 @@
       line-height: 1.3;
     }
 
+    .work-status {
+      display: inline-block;
+      margin: 5px 0 14px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
     .work-item p {
       margin: 0;
       font-size: 14px;
+      max-width: 680px;
+    }
+
+    /* HIGHLIGHT TARGET */
+    .work-item.target {
+      padding-left: 15px;
+      border-left: 5px solid var(--orange);
+      transition: 0.3s ease;
     }
 
     /* INTERESTS */
@@ -615,30 +632,35 @@
         International<br>Affairs
       </div>
 
+      <!-- INTERSECTION 1 -->
       <button class="intersection intersection-1"
               onclick="showResearch(1, this)"
               aria-label="Artificial Intelligence and Epistemic Agency">
         AI<br>∩<br>Agency
       </button>
 
+      <!-- INTERSECTION 2 -->
       <button class="intersection intersection-2"
               onclick="showResearch(2, this)"
               aria-label="Artificial Intelligence and Regulation and Law">
         AI<br>∩<br>Law
       </button>
 
+      <!-- INTERSECTION 3 -->
       <button class="intersection intersection-3"
               onclick="showResearch(3, this)"
               aria-label="Epistemic Agency and Institutions and Power">
         Agency<br>∩<br>Power
       </button>
 
+      <!-- INTERSECTION 4 -->
       <button class="intersection intersection-4"
               onclick="showResearch(4, this)"
               aria-label="Regulation and Law and Institutions and Power">
         Law<br>∩<br>Power
       </button>
 
+      <!-- INTERSECTION 5 -->
       <button class="intersection intersection-5"
               onclick="showResearch(5, this)"
               aria-label="Institutions and Power and International Affairs">
@@ -647,7 +669,7 @@
 
     </div>
 
-    <!-- DYNAMIC DETAIL -->
+    <!-- DYNAMIC INTERSECTION MENU -->
     <section id="research-detail" class="research-detail">
 
       <div class="detail-label" id="detail-intersection"></div>
@@ -658,8 +680,7 @@
 
       <a href="#"
          id="detail-link"
-         class="research-link"
-         onclick="return false;">
+         class="research-link">
         <span id="detail-link-text"></span>
         <span class="arrow">→</span>
       </a>
@@ -680,68 +701,142 @@
 
       <div class="work-list">
 
-        <div class="work-item">
-          <div class="work-meta">Undergraduate Thesis</div>
+        <!-- WORK 1 -->
+        <article class="work-item" id="work-travel">
 
-          <div>
-            <h3>
-              Configuring AI Decision-Making Capacity in the European Union
-            </h3>
-
-            <p>
-              Undergraduate thesis examining how European Union regulations
-              and institutional structures delimit and organize the field of
-              action available to artificial intelligence systems, from 2016
-              to 2024.
-            </p>
+          <div class="work-meta">
+            Current Research
           </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-meta">Current Research</div>
 
           <div>
             <h3>
               AI Travel Planners and Epistemic Agency
             </h3>
 
+            <div class="work-status">
+              In progress
+            </div>
+
             <p>
-              Exploring how AI-generated travel recommendations can carry
-              assumptions across contexts and shape what users perceive as
-              available, realistic, or possible.
+              I am examining how AI-generated travel recommendations can
+              carry assumptions across contexts and shape what users perceive
+              as available, realistic, or possible. The project focuses on
+              travel planning in Mexico as a way of examining how seemingly
+              reasonable recommendations can overlook local specificities
+              concerning mobility, infrastructure, security and everyday life.
             </p>
           </div>
-        </div>
 
-        <div class="work-item">
-          <div class="work-meta">Research Seminar</div>
+        </article>
+
+        <!-- WORK 2 -->
+        <article class="work-item" id="work-thesis">
+
+          <div class="work-meta">
+            Undergraduate Thesis
+          </div>
+
+          <div>
+            <h3>
+              Configuring AI Decision-Making Capacity in the European Union
+            </h3>
+
+            <div class="work-status">
+              In progress
+            </div>
+
+            <p>
+              This undergraduate thesis examines how the European Union
+              configures the decision-making capacity of artificial intelligence
+              through the ecosystem of regulations developed between 2016 and
+              2024. It traces how legal and institutional arrangements define,
+              delimit and organize the field of action available to AI systems.
+            </p>
+          </div>
+
+        </article>
+
+        <!-- WORK 3 -->
+        <article class="work-item" id="work-critical-theory">
+
+          <div class="work-meta">
+            Research Seminar
+          </div>
 
           <div>
             <h3>
               Automation, Subjectivity &amp; Critical Theory
             </h3>
 
+            <div class="work-status">
+              In progress
+            </div>
+
             <p>
-              A critical exploration of artificial intelligence, political
-              economy, subjectivity, power, psychoanalysis and critical theory.
+              This research explores the relationship between automation,
+              artificial intelligence, subjectivity and power through critical
+              theory, political economy, psychoanalysis and the Frankfurt
+              School. The project asks how technological systems participate
+              in the organization of social relations and forms of subjectivity.
             </p>
           </div>
-        </div>
 
-        <div class="work-item">
-          <div class="work-meta">COIL · Mexico &amp; Argentina</div>
+        </article>
+
+        <!-- WORK 4 -->
+        <article class="work-item" id="work-regulation">
+
+          <div class="work-meta">
+            Research Focus
+          </div>
+
+          <div>
+            <h3>
+              AI Regulation and Institutional Configuration in the European Union
+            </h3>
+
+            <div class="work-status">
+              Research focus
+            </div>
+
+            <p>
+              This work examines AI regulation as an institutional process,
+              focusing on how European Union institutions, Member State
+              priorities, regulatory instruments and emerging structures
+              contribute to the configuration of the field in which artificial
+              intelligence develops and operates.
+            </p>
+          </div>
+
+        </article>
+
+        <!-- WORK 5 -->
+        <article class="work-item" id="work-cyber-defense">
+
+          <div class="work-meta">
+            COIL · Mexico &amp; Argentina
+          </div>
 
           <div>
             <h3>
               Cross-Border Cyber Defense
             </h3>
 
+            <div class="work-status">
+              Completed project
+            </div>
+
             <p>
-              Comparative work on national cybersecurity strategies and the
-              institutional and geopolitical contexts surrounding cyber defense.
+              This comparative project examined national cybersecurity
+              strategies in Mexico and Argentina, considering the institutional
+              and geopolitical contexts in which cyber defense is organized.
+              The project approached cybersecurity as a cross-border issue
+              shaped by different national strategies and institutional
+              configurations.
             </p>
           </div>
-        </div>
+
+        </article>
 
       </div>
     </section>
@@ -784,54 +879,69 @@
   </div>
 
   <script>
+
     const researchData = {
+
       1: {
         intersection: "Artificial Intelligence ∩ Epistemic Agency",
         title: "AI Travel Planners and Epistemic Agency",
         linkText: "AI Travel Planners and Epistemic Agency",
-        status: "Current Research Interest",
+        status: "In progress",
         description:
-          "Exploring how AI-generated travel recommendations can carry assumptions across contexts and shape what users perceive as available, realistic, or possible, using Mexico as a starting context."
+          "I am examining how AI-generated travel recommendations can carry assumptions across contexts and shape what users perceive as available, realistic, or possible."
+        ,
+        link: "#work-travel"
       },
 
       2: {
         intersection: "Artificial Intelligence ∩ Regulation & Law",
         title: "Configuring AI Decision-Making Capacity in the European Union",
         linkText: "Configuring AI Decision-Making Capacity in the European Union",
-        status: "Undergraduate Thesis",
+        status: "In progress",
         description:
-          "Examining how European Union regulations and institutional structures delimit and organize the field of action available to artificial intelligence systems from 2016 to 2024."
+          "This undergraduate thesis examines how the European Union configures the decision-making capacity of artificial intelligence through the ecosystem of regulations developed between 2016 and 2024."
+        ,
+        link: "#work-thesis"
       },
 
       3: {
         intersection: "Epistemic Agency ∩ Institutions & Power",
         title: "Automation, Subjectivity & Critical Theory",
         linkText: "Automation, Subjectivity & Critical Theory",
-        status: "Research Seminar",
+        status: "In progress",
         description:
-          "A critical exploration of artificial intelligence, political economy, subjectivity, power, psychoanalysis and critical theory."
+          "This research explores the relationship between automation, artificial intelligence, subjectivity and power through critical theory, political economy, psychoanalysis and the Frankfurt School."
+        ,
+        link: "#work-critical-theory"
       },
 
       4: {
         intersection: "Regulation & Law ∩ Institutions & Power",
         title: "AI Regulation and Institutional Configuration in the European Union",
         linkText: "AI Regulation and Institutional Configuration in the European Union",
-        status: "Research Focus",
+        status: "Research focus",
         description:
-          "Examining AI regulation as an institutional process shaped by European Union institutions, Member State priorities, regulatory instruments and emerging structures."
+          "This work examines AI regulation as an institutional process, focusing on how European Union institutions, Member State priorities, regulatory instruments and emerging structures contribute to the configuration of the field."
+        ,
+        link: "#work-regulation"
       },
 
       5: {
         intersection: "Institutions & Power ∩ International Affairs",
         title: "Cross-Border Cyber Defense",
         linkText: "Cross-Border Cyber Defense",
-        status: "COIL · Mexico & Argentina",
+        status: "Completed project",
         description:
-          "Comparative work on national cybersecurity strategies and the institutional and geopolitical contexts surrounding cyber defense."
+          "This comparative project examined national cybersecurity strategies in Mexico and Argentina, considering the institutional and geopolitical contexts in which cyber defense is organized."
+        ,
+        link: "#work-cyber-defense"
       }
+
     };
 
+
     function showResearch(number, button) {
+
       const data = researchData[number];
 
       document.getElementById("detail-intersection").textContent =
@@ -853,6 +963,35 @@
 
       detail.classList.add("visible");
 
+      const link = document.getElementById("detail-link");
+
+      link.href = data.link;
+
+      link.onclick = function() {
+
+        const target = document.querySelector(data.link);
+
+        if (target) {
+
+          document.querySelectorAll(".work-item").forEach(function(item) {
+            item.classList.remove("target");
+          });
+
+          target.classList.add("target");
+
+          setTimeout(function() {
+            target.classList.remove("target");
+          }, 1800);
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+        }
+
+      };
+
       document.querySelectorAll(".intersection").forEach(function(item) {
         item.classList.remove("selected");
       });
@@ -864,6 +1003,7 @@
         block: "center"
       });
     }
+
   </script>
 
 </body>
