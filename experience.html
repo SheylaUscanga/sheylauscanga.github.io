@@ -1,12 +1,26 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Professional Experience | Sheyla Uscanga Vazquez</title>
 
   <style>
+    :root {
+      --navy: #003049;
+      --red: #DC2F02;
+      --orange: #F77F00;
+      --cream: #EAE2B7;
+      --gold: #FCBF49;
+      --black: #000000;
+      --white: #FFFFFF;
+
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -17,594 +31,614 @@
 
     body {
       margin: 0;
-      background: #ffffff;
-      color: #242424;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
+      background: var(--cream);
+      color: var(--navy);
+      font-family: var(--sans);
+      line-height: 1.6;
     }
 
-    .page {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 38px 34px 70px;
+    /* TOP COLOR BANNER */
+
+    .top-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 12px;
+      width: 100%;
+    }
+
+    .top-banner div:nth-child(1) {
+      background: var(--navy);
+    }
+
+    .top-banner div:nth-child(2) {
+      background: var(--red);
+    }
+
+    .top-banner div:nth-child(3) {
+      background: var(--orange);
     }
 
     /* NAVIGATION */
 
     nav {
+      width: 100%;
+      border-bottom: 2px solid var(--navy);
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      background: var(--cream);
+    }
+
+    .site-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: bold;
+      white-space: nowrap;
+      color: var(--navy);
+    }
+
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 27px;
+      justify-content: flex-end;
+      gap: 22px;
       flex-wrap: wrap;
-      padding-bottom: 17px;
-      margin-bottom: 75px;
-      border-bottom: 1px solid #d9d9d9;
     }
 
-    nav .site-name {
-      margin-right: auto;
-      color: #242424;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 17px;
+    .nav-links a {
       text-decoration: none;
-      white-space: nowrap;
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s ease;
     }
 
-    nav a:not(.site-name) {
-      color: #242424;
-      font-size: 14px;
-      text-decoration: none;
-      white-space: nowrap;
+    .nav-links a:hover {
+      color: var(--orange);
+      border-bottom-color: var(--orange);
     }
 
-    nav a:not(.site-name):hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    .nav-links a.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
     }
 
-    /* HEADER */
+    /* PAGE HEADER */
+
+    .page-header {
+      width: 90%;
+      max-width: 1200px;
+      margin: 80px auto 55px;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 55px;
+      align-items: end;
+    }
+
+    .page-number {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: bold;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
 
     h1 {
-      margin: 0 0 25px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 40px;
-      font-weight: normal;
-      line-height: 1.15;
-      letter-spacing: -0.4px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.9;
+      margin: 0;
+      letter-spacing: -0.045em;
     }
 
-    .intro {
-      max-width: 790px;
-      margin: 0 0 55px;
-      font-size: 16px;
+    .header-description {
+      max-width: 600px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      border-left: 5px solid var(--orange);
+      padding-left: 24px;
     }
 
-    /* EXPERIENCE LIST */
+    /* EXPERIENCE AREA */
 
-    .experience-list {
-      border-top: 1px solid #d9d9d9;
+    .experience-section {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto 100px;
     }
 
-    .experience-item {
-      border-bottom: 1px solid #d9d9d9;
-    }
-
-    .experience-button {
-      width: 100%;
-      padding: 25px 5px 25px 0;
-      border: 0;
-      background: transparent;
-      color: #242424;
-      font-family: inherit;
-      text-align: left;
-      cursor: pointer;
-
-      display: grid;
-      grid-template-columns: 1fr 35px;
-      gap: 25px;
+    .section-label {
+      display: flex;
       align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: bold;
     }
 
-    .experience-button:hover .experience-title {
-      text-decoration: underline;
-      text-underline-offset: 4px;
+    .section-label::after {
+      content: "";
+      height: 2px;
+      background: var(--navy);
+      flex: 1;
     }
 
-    .experience-main {
-      display: block;
-    }
+    /* EXPERIENCE CARDS */
 
-    .experience-title {
-      display: block;
-      margin-bottom: 5px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
-      font-weight: normal;
-      line-height: 1.4;
-    }
-
-    .experience-meta {
-      display: block;
-      color: #666666;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .arrow {
-      justify-self: end;
-      color: #0645ad;
-      font-size: 22px;
-      line-height: 1;
-      transition: transform 0.25s ease;
-    }
-
-    .experience-item.open .arrow {
-      transform: rotate(90deg);
-    }
-
-    /* EXPANDED CONTENT */
-
-    .experience-content {
+    .experience-grid {
       display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.35s ease;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
     }
 
-    .experience-item.open .experience-content {
-      grid-template-rows: 1fr;
-    }
-
-    .experience-inner {
+    .experience-card {
+      position: relative;
+      background: var(--white);
+      border: 2px solid var(--navy);
+      padding: 34px;
+      min-height: 310px;
+      cursor: pointer;
+      box-shadow: 9px 9px 0 var(--navy);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
       overflow: hidden;
-      min-height: 0;
     }
 
-    .experience-text {
-      max-width: 770px;
-      padding: 0 60px 29px 0;
+    .experience-card:nth-child(2) {
+      background: var(--orange);
+      color: var(--navy);
     }
 
-    .experience-text p {
-      margin: 0 0 17px;
+    .experience-card:nth-child(3) {
+      background: var(--navy);
+      color: var(--cream);
+      box-shadow: 9px 9px 0 var(--red);
     }
+
+    .experience-card:hover {
+      transform: translate(5px, 5px);
+      box-shadow: 4px 4px 0 var(--navy);
+    }
+
+    .experience-card:nth-child(3):hover {
+      box-shadow: 4px 4px 0 var(--red);
+    }
+
+    .experience-year {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .experience-card h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1;
+      margin: 0 0 12px;
+      letter-spacing: -0.025em;
+    }
+
+    .role {
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .experience-preview {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 570px;
+    }
+
+    .view-button {
+      position: absolute;
+      right: 28px;
+      bottom: 25px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: bold;
+      border-bottom: 2px solid currentColor;
+      padding-bottom: 3px;
+    }
+
+    /* DETAILS */
 
     .experience-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      margin-top: 0;
+    }
+
+    .experience-card.open {
+      cursor: default;
+    }
+
+    .experience-card.open .experience-details {
+      max-height: 500px;
+      padding-top: 24px;
+      margin-top: 22px;
+      border-top: 1px solid currentColor;
+    }
+
+    .experience-details ul {
       margin: 0;
-      padding: 18px 20px;
-      border-left: 2px solid #d9d9d9;
-      color: #555555;
-      font-size: 14px;
+      padding-left: 20px;
     }
 
-    /* LINKS */
-
-    .experience-text a {
-      color: #0645ad;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    .experience-details li {
+      margin-bottom: 11px;
+      font-size: 0.92rem;
     }
 
-    .experience-text a:hover {
-      color: #002b6f;
+    .experience-card.open .view-button::after {
+      content: " ×";
+    }
+
+    /* PROFESSIONAL THREAD */
+
+    .thread {
+      margin-top: 95px;
+      border-top: 2px solid var(--navy);
+      padding-top: 35px;
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 50px;
+    }
+
+    .thread-title {
+      font-family: var(--serif);
+      font-size: 2.3rem;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .thread-text {
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0;
     }
 
     /* FOOTER */
 
     footer {
-      margin-top: 78px;
-      padding-top: 17px;
-      border-top: 1px solid #d9d9d9;
-      color: #777777;
-      font-size: 13px;
+      border-top: 2px solid var(--navy);
+      margin-top: 100px;
+      padding: 28px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
     footer a {
-      color: #777777;
+      color: var(--navy);
       text-decoration: none;
+      font-weight: bold;
     }
 
     footer a:hover {
-      text-decoration: underline;
+      color: var(--orange);
     }
 
     /* RESPONSIVE */
 
     @media (max-width: 850px) {
-
       nav {
-        gap: 18px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      nav .site-name {
-        width: 100%;
-        margin-right: 0;
+      .nav-links {
+        justify-content: flex-start;
+        gap: 14px;
+      }
+
+      .page-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 55px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .thread {
+        grid-template-columns: 1fr;
+        gap: 25px;
       }
     }
 
-    @media (max-width: 700px) {
-
-      .page {
-        padding: 28px 22px 55px;
+    @media (max-width: 600px) {
+      .top-banner {
+        height: 9px;
       }
 
       nav {
-        margin-bottom: 55px;
-        gap: 13px 18px;
+        padding: 18px 6%;
+      }
+
+      .site-name {
+        font-size: 1.15rem;
+      }
+
+      .nav-links a {
+        font-size: 0.7rem;
+      }
+
+      .page-header,
+      .experience-section {
+        width: 88%;
       }
 
       h1 {
-        font-size: 34px;
+        font-size: 3.6rem;
       }
 
-      .experience-button {
-        grid-template-columns: 1fr 25px;
-        gap: 12px;
-        padding: 22px 0;
+      .header-description {
+        font-size: 0.95rem;
       }
 
-      .experience-title {
-        font-size: 19px;
+      .experience-card {
+        padding: 27px;
+        min-height: 290px;
+        box-shadow: 6px 6px 0 var(--navy);
       }
 
-      .experience-text {
-        padding-right: 10px;
+      .experience-card:nth-child(3) {
+        box-shadow: 6px 6px 0 var(--red);
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
-
 </head>
 
 <body>
 
-  <div class="page">
-
-```
-<nav>
-  <a class="site-name" href="index.html">Sheyla Uscanga Vazquez</a>
-  <a href="index.html">Home</a>
-  <a href="research.html">Research</a>
-  <a href="experience.html">Professional Experience</a>
-  <a href="engagement.html">Academic &amp; Community Engagement</a>
-  <a href="cv.html">CV</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-
-<main>
-
-  <h1>Professional Experience</h1>
-
-  <p class="intro">
-    My professional experience has brought me into contact with migration, consular
-    affairs, electoral processes, international affairs, and youth programs. Across
-    these settings, I have worked at the intersection of institutions, public-facing
-    processes, and international contexts.
-  </p>
-
-
-  <div class="experience-list">
-
-
-    <!-- USCRI -->
-
-    <article class="experience-item">
-
-      <button class="experience-button" type="button">
-
-        <span class="experience-main">
-          <span class="experience-title">
-            Migration &amp; Intercultural Affairs
-          </span>
-
-          <span class="experience-meta">
-            USCRI LAC-RECIBE · Mexico · 2023–Present
-          </span>
-        </span>
-
-        <span class="arrow">→</span>
-
-      </button>
-
-
-      <div class="experience-content">
-
-        <div class="experience-inner">
-
-          <div class="experience-text">
-
-            <p>
-              Work within a university-community initiative focused on migration,
-              displacement, and intercultural engagement. My responsibilities have
-              included monitoring, organizing, and classifying mobility-related files,
-              supporting documentation processes, and assisting with legal-orientation
-              protocols for people in mobility situations.
-            </p>
-
-            <p>
-              I have also supported university students with migration and adaptation
-              processes, contributed to the documentation of three intercultural
-              initiatives, and assisted with events connecting public institutions
-              and universities.
-            </p>
-
-            <p class="experience-details">
-              Experience includes multilingual academic support for students in
-              mobility situations in Aguascalientes and San Luis Potosí, as well as
-              operational support for a three-day mobility event with more than
-              400 attendees.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- SRE -->
-
-    <article class="experience-item">
-
-      <button class="experience-button" type="button">
-
-        <span class="experience-main">
-
-          <span class="experience-title">
-            Consular Affairs
-          </span>
-
-          <span class="experience-meta">
-            Secretaría de Relaciones Exteriores · Puebla
-          </span>
-
-        </span>
-
-        <span class="arrow">→</span>
-
-      </button>
-
-
-      <div class="experience-content">
-
-        <div class="experience-inner">
-
-          <div class="experience-text">
-
-            <p>
-              Supported activities related to consular assistance and protection,
-              administrative procedures, and documentation concerning the rights of
-              people in mobility situations outside Mexican territory.
-            </p>
-
-            <p>
-              The work involved public-facing assistance, document management, and
-              administrative coordination for consular procedures, including cases
-              involving repatriation and the transmission of official documentation
-              through the office.
-            </p>
-
-            <p class="experience-details">
-              Approximately 10 Mexican nationals and 5 international visitors were
-              assisted per day during a six-month period.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- INE -->
-
-    <article class="experience-item">
-
-      <button class="experience-button" type="button">
-
-        <span class="experience-main">
-
-          <span class="experience-title">
-            Electoral Processes
-          </span>
-
-          <span class="experience-meta">
-            Instituto Nacional Electoral · 2025
-          </span>
-
-        </span>
-
-        <span class="arrow">→</span>
-
-      </button>
-
-
-      <div class="experience-content">
-
-        <div class="experience-inner">
-
-          <div class="experience-text">
-
-            <p>
-              Participated in the 2025 electoral process for the election of members
-              of the Mexican Judiciary, supporting operational activities related to
-              electoral information and voter data.
-            </p>
-
-            <p>
-              Coordinated a team working with a newly implemented system for the
-              control and capture of voter data, helping organize information and
-              maintain accuracy throughout the process.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- MINERVA -->
-
-    <article class="experience-item">
-
-      <button class="experience-button" type="button">
-
-        <span class="experience-main">
-
-          <span class="experience-title">
-            International Affairs &amp; Student Delegation
-          </span>
-
-          <span class="experience-meta">
-            Delegación Minerva · BUAP
-          </span>
-
-        </span>
-
-        <span class="arrow">→</span>
-
-      </button>
-
-
-      <div class="experience-content">
-
-        <div class="experience-inner">
-
-          <div class="experience-text">
-
-            <p>
-              Member of Delegación Minerva, a BUAP student delegation focused on
-              preparation and participation in Model United Nations. The delegation
-              includes internal preparation classes and participation in several
-              international simulation conferences.
-            </p>
-
-            <p>
-              Through these activities, I have worked on research, public speaking,
-              negotiation, diplomatic representation, and multilateral procedure.
-              I have represented Mexico, France, and Chile in committees addressing
-              international security and legal cooperation.
-            </p>
-
-            <p class="experience-details">
-              Work has included developing more than eight proposals concerning
-              international legal structures and conducting comparative research on
-              migration and asylum legislation through a simulation involving
-              delegations from ten countries.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- GLORIETA -->
-
-    <article class="experience-item">
-
-      <button class="experience-button" type="button">
-
-        <span class="experience-main">
-
-          <span class="experience-title">
-            International Youth Programs
-          </span>
-
-          <span class="experience-meta">
-            Glorieta Adventure Camps · New Mexico, USA · 2024
-          </span>
-
-        </span>
-
-        <span class="arrow">→</span>
-
-      </button>
-
-
-      <div class="experience-content">
-
-        <div class="experience-inner">
-
-          <div class="experience-text">
-
-            <p>
-              Worked in an international summer camp program in New Mexico,
-              supporting youth activities in a multicultural environment and
-              contributing to the daily operation of the camp.
-            </p>
-
-            <p>
-              Responsibilities included sports activities and youth programming,
-              working with participants from different cultural and linguistic
-              backgrounds.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
+  <!-- TOP COLOR BANNER -->
+
+  <div class="top-banner">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 
-</main>
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="site-name">Sheyla Uscanga Vazquez</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="experience.html" class="active">Professional Experience</a>
+      <a href="engagement.html">Academic &amp; Community Engagement</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+
+  <header class="page-header">
+    <div>
+      <div class="page-number">03 / Professional Experience</div>
+      <h1>Professional<br>Experience</h1>
+    </div>
+
+    <p class="header-description">
+      Selected professional experiences across consular affairs, electoral processes,
+      public law, and youth programs.
+    </p>
+  </header>
+
+  <!-- EXPERIENCE -->
+
+  <main class="experience-section">
+
+    <div class="section-label">
+      Experience
+    </div>
+
+    <div class="experience-grid">
+
+      <!-- SRE -->
+
+      <article class="experience-card" onclick="toggleCard(this)">
+        <div class="experience-year">
+          Six-month internship
+        </div>
+
+        <h2>Secretaría de Relaciones Exteriores — Puebla</h2>
+
+        <div class="role">
+          Consultant Intern · Consular Support &amp; Protection
+        </div>
+
+        <p class="experience-preview">
+          Supported consular assistance processes involving nationals and international
+          visitors, with a focus on mobility-related matters and official documentation.
+        </p>
+
+        <div class="experience-details">
+          <ul>
+            <li>
+              Assisted more than 10 nationals and approximately 5 international visitors
+              per day with mobility-related matters and consular procedures.
+            </li>
+            <li>
+              Supported services related to consular assistance and protection,
+              including cases involving the repatriation of remains.
+            </li>
+            <li>
+              Prepared and sent official documentation and document packages
+              through established institutional procedures.
+            </li>
+            <li>
+              Worked with confidential information while supporting administrative
+              processes within the office.
+            </li>
+          </ul>
+        </div>
+
+        <div class="view-button">View experience</div>
+      </article>
 
 
-<footer>
-  Sheyla Uscanga Vazquez ·
-  <a href="research.html">Research</a> ·
-  <a href="contact.html">Contact</a>
-</footer>
-```
+      <!-- INE -->
 
-  </div>
+      <article class="experience-card" onclick="toggleCard(this)">
+        <div class="experience-year">
+          2025 · Electoral Process
+        </div>
+
+        <h2>Instituto Nacional Electoral</h2>
+
+        <div class="role">
+          Public Law &amp; Data Consultant
+        </div>
+
+        <p class="experience-preview">
+          Participated in the 2025 electoral process for Mexico's first judicial
+          elections, supporting voter-data management and team coordination.
+        </p>
+
+        <div class="experience-details">
+          <ul>
+            <li>
+              Participated in the electoral process surrounding Mexico's 2025
+              judicial elections.
+            </li>
+            <li>
+              Coordinated a team working with a new voter-data control and
+              registration system.
+            </li>
+            <li>
+              Supported the organization, capture, and control of electoral
+              information within established procedures.
+            </li>
+            <li>
+              Worked in a public-law and institutional context requiring accuracy,
+              coordination, and responsible handling of data.
+            </li>
+          </ul>
+        </div>
+
+        <div class="view-button">View experience</div>
+      </article>
+
+
+      <!-- GLORIETA -->
+
+      <article class="experience-card" onclick="toggleCard(this)">
+        <div class="experience-year">
+          Summer 2024 · New Mexico, USA
+        </div>
+
+        <h2>Glorieta Adventure Camps</h2>
+
+        <div class="role">
+          Youth Programs &amp; Sports Counseling
+        </div>
+
+        <p class="experience-preview">
+          Worked in a multicultural summer-camp environment supporting youth programs,
+          sports activities, and group-based experiences.
+        </p>
+
+        <div class="experience-details">
+          <ul>
+            <li>
+              Supported sports activities for young people ages 12–15, including
+              soccer, basketball, and volleyball.
+            </li>
+            <li>
+              Participated in youth retreat programs for children and adolescents.
+            </li>
+            <li>
+              Worked in a multicultural and international environment as part of
+              a seasonal youth-program team.
+            </li>
+            <li>
+              Developed practical experience in communication, teamwork,
+              responsibility, and group facilitation.
+            </li>
+          </ul>
+        </div>
+
+        <div class="view-button">View experience</div>
+      </article>
+
+    </div>
+
+
+    <!-- PROFESSIONAL THREAD -->
+
+    <section class="thread">
+      <div>
+        <h2 class="thread-title">Across contexts.</h2>
+      </div>
+
+      <p class="thread-text">
+        My professional experience has taken place across public institutions,
+        international environments, and youth programs. These contexts have
+        strengthened my interest in how institutions organize information,
+        mobility, responsibility, and interaction between people and systems.
+      </p>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <span>Sheyla Uscanga Vazquez</span>
+
+    <a href="contact.html">Get in touch →</a>
+  </footer>
+
 
   <script>
+    function toggleCard(card) {
+      const isOpen = card.classList.contains("open");
 
-    const experienceItems = document.querySelectorAll(".experience-item");
-
-    experienceItems.forEach(function(item) {
-
-      const button = item.querySelector(".experience-button");
-
-      button.addEventListener("click", function() {
-
-        const isOpen = item.classList.contains("open");
-
-        experienceItems.forEach(function(otherItem) {
-          otherItem.classList.remove("open");
-        });
-
-        if (!isOpen) {
-          item.classList.add("open");
-
-          setTimeout(function() {
-            item.scrollIntoView({
-              behavior: "smooth",
-              block: "nearest"
-            });
-          }, 50);
-        }
-
+      document.querySelectorAll(".experience-card").forEach(function(item) {
+        item.classList.remove("open");
       });
 
-    });
-
+      if (!isOpen) {
+        card.classList.add("open");
+      }
+    }
   </script>
 
 </body>
 </html>
+```
